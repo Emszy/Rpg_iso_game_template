@@ -1,0 +1,48 @@
+potions
+	{
+		poison
+		{
+			spider_eggs, scorpion_stinger, or venom
+
+			cannot create without glass for a bottle
+		}
+		poison_potion
+		{
+			glass + poison
+		}
+		disaster_potion
+		{
+			2 disaster_fruit
+			glass
+		}
+		gargantuan_potion
+		{
+			5 gargantuan_fruit
+			glass
+			heals 90% of your health
+		}
+		dormant_potion
+		{
+			5 dormant_fruit
+			glass
+			put on arrows to slow enemies
+			2 minutes
+		}
+		lightning_potion
+		{
+			5 lightning_fruit
+			glass
+			+30% speed
+			+10% attack speed
+			2 minutes
+		}
+		razor_potion
+		{
+			2 razor_fruit
+			glass
+			sharpens current weapon (50% attack bonus)
+			2 minutes
+		}
+
+
+	}

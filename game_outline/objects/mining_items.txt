@@ -1,0 +1,195 @@
+Mining Items
+		-stone_deposit
+		{
+			mining_lvl: 1
+
+
+			hit with pick or rock
+			depletes deposit
+			adds to inventory or drop if inventory full
+
+			acquire: drops, mining, pick up
+		}
+
+		-stone
+		{
+			mining_lvl: 1
+			Used to craft stone items
+
+			acquire: drops, stone_deposit, pick up
+		}
+
+		iron_rock
+		{
+			mining_lvl : 15
+			
+			hit with pic ax 
+			depletes rock
+			adds to inventory or drop if inventory full
+
+
+
+		}
+
+		-iron_ore
+		{
+			smelt into iron bar
+			acquire: drops, iron_rock, pick up
+		}
+
+		-iron_bar
+		{
+			crafting_lvl: 10
+			smelt_from iron_ore
+			used for making items.
+		}
+
+		-coal_deposit
+		{
+			mining_lvl: 30
+			hit with pic ax 
+			depletes deposit
+			adds to inventory or drop if inventory full
+
+		}
+		-coal
+		{
+			Used to make gun_powder and steel
+
+			acquire: drops, mining, pick up
+		}
+		-steel_bar
+		{	
+			crafting_lvl: 45
+			smelt from coal and iron
+			used for making items
+		}
+		
+		-diamond_deposit
+		{
+			mining_lvl: 55
+			hit with pic ax 
+			depletes deposit
+			adds to inventory or drop if inventory full
+		}
+
+		-diamond
+		{
+			Used to make diamond items
+
+			acquire: drops, mining, pick up
+		}
+		demonic_rock
+		{
+			mining_lvl: 80
+			hit with diamond pic ax 
+			depletes deposit
+			adds to inventory or drop if inventory full
+			mined with diamond pickaxe; extremely rare.
+
+		}
+
+		demonic_ore
+		{
+
+			used to make demonic items;
+			craft into a demonic bar.
+		}
+
+		-demonic_bar
+		{
+			crafting_lvl: 70
+			used to make demonic items
+		}
+		-sand
+		{
+			no lvl required
+			used to make glass
+
+			acquire: use bucket on beach
+						then bucket of sand with a furnace
+		}
+		-glass
+		{
+			no lvl required
+			used for windows, cant see outside your house without windows
+		}
+		-sulfur
+		{
+
+			used to make gunpowder
+
+			acquire: mining, drops
+		}
+
+		air_stone_mine
+		{
+			mining_lvl:1
+
+		}
+		earth_stone_mine
+		{
+			mining_lvl:1
+
+
+		}
+		fire_stone_mine
+		{
+			mining_lvl:1
+
+
+		}
+		water_stone_mine
+		{
+			mining_lvl:1
+
+
+		}
+		demon_stone_mine
+		{
+			mining_lvl: 15
+
+
+		}
+		light_stone_mine
+		{
+			mining_lvl: 30
+
+
+		}
+		undead_stone_mine
+		{
+			mining_lvl: 50
+
+
+		}
+		clone_stone_mine
+		{
+			mining_lvl: 65
+
+
+		}
+		rage_stone_mine
+		{
+			mining_lvl:74
+
+
+		}
+		wolf_stone_mine
+		{
+			mining_lvl:82
+
+
+		}
+		compression_stone_mine
+		{
+			mining_lvl:89
+
+
+		}
+		multi_stone_mine
+		{
+			mining_lvl:95
+
+
+		}

@@ -1,0 +1,197 @@
+4. npc-spawn_area
+{
+
+	non_fighters
+	{
+		guide
+		{
+			Hey I am the guide pick up a rock to get wood, made a wooden axe and pickaxe, maybe sword and shield, mine a little and make some stuff.
+
+		}
+
+		friend/craftsman
+		{
+			Hey you can craft things here at my crafting table, eventually you should get your own. heck, you might even get your own house one day.
+		}
+
+		coal_worker
+		{
+			grab a rock or a pick and take a swing at a rock, most everything is breakable in this world. except a select few people, but we are here to help.
+		}
+
+		wood_cutter
+		{
+			Idk if you talked to the coal worker but take a whack at that tree. you can get wood of all sorts in this crazy world.
+		}
+
+		kid
+		{
+			The more you do things, the more you level up. if you die you lose your stuff, your xp will go bye bye so make sure you stay alive. It's hard out there. Good luck
+
+		}
+
+		friendly_archer
+		{
+			hey find some cloth from a plant and make some string. then grab some wood and make a bow. kill a chicken for feathers, and when you have the resources you can make different arrow tips. To start most people just sharpen the wood.
+		}
+
+		BlackSmith
+		{
+			See this here anvil. You use the furnace to make bars. You use the anvil to make weapons and armor. 
+		}
+
+		shop_keeper
+		{
+			Hot fire fuego deals here.
+
+			Opens menu of random items that change every 2 game days
+		}
+
+		weapons_dealer
+		{
+			...
+
+			open menu of random weapons that change every 3 game days
+		}
+
+		Doctor
+		{
+			I can heal you right up
+
+			charges a little gold for full health
+		}
+
+		Shaman
+		{
+			You need some stones, and not the rock. magic stones, with enough and the right power, you can summon, pray by burying bones and meditating. higher prayer equals longer summoning time.
+		}
+
+		Master_mage
+		{
+			With stones, magic stones, you can harness the power of magic. Magic and prayer both are in harmony with each other. Strong magic and weak prayer equals short lifes for your creatures.
+			high prayer and weak magic equals weaklings for a long life.
+		}
+
+		lighthouse_keeper
+		{
+			I look out for the boats. I haven't much to offer you except advice. The beast you are looking for is very strong. You need to have the best gear possible. If you take that boat, it will take you to the island not far from here. You will be one step closer to completing your journey.
+		}
+
+		light_house_keepers_daughter
+		{
+			Your cute, if you become king can I be Queen?!? Pretty pretty please!
+		}
+
+		natives
+		{
+			You are not from here are you? There are lots of strong creatures on this island, be weary. Bring lots of potions and food.
+		}
+
+		tribesman
+		{
+			We are the strongest people of the island
+			would you like a mask?
+
+			if yes give mask, if no dont
+		}
+
+		Island_shop_keeper
+		{
+			We sell the finest things the jungle has to offer my friend.
+
+			opens island robes
+		}
+
+		Island_Weapons_dealer
+		{
+			we have very nice weapons
+
+			opens spears and poisons
+		}
+
+		hero
+		{
+			I just saved the princess, and now shes outside healing everything she can touch. crazy world we live in.
+		}
+
+		king
+		{
+			I am the king, like thee king. yeah, tax.
+		}
+
+		queen
+		{
+			My husband is so full of himself, its hilarious. All he knows is how to be a bully. If it weren't for me he would have had a revolt already. He was planning to slay the diamond ork soon to gain the wish that comes with. But i fear he will never actually do it. *sigh*
+		}
+
+		jester
+		{
+			Juggle, juggle, gujjel, legguj, juggel, juggle,
+		}
+
+		nomad
+		{
+			I move from place to place, but I am sure I have never seen you. Where are your from? I am not from anywhere, I move place to place.
+		}
+
+		sire
+		{
+			I am the sire of the desert. This is my palace, not as big as the kings kingdom. but it will be one day. I will expand the farthest reaches of the world.
+		}
+
+		pasture
+		{
+			We must pray inside, you can get a bonus if you pray inside
+		}
+
+		trickster
+		{
+			Go this way, it is safer this way. I have been directing this path for thousands of years.
+		}
+
+		kid
+		{
+			Hey again, I thought i would catch up to give you some supplies. You want them?
+
+			give some magic_stones, and octopus
+		}
+
+		traveler
+		{
+			I have been traveling a long time, you want to see my inventory?
+
+			show inventory of random collected items
+		}
+
+		nurse
+		{
+			Let me heal your blessed little soul.
+		}
+
+		demonic_shop_keeper
+		{
+			We sell demonic blades. Didn't say they were cheap though.
+
+			open demonic shop
+		}
+
+		tortured_soul
+		{
+			doesn't say anything is just for decoration
+		}
+
+		damned_damsel
+		{
+			I just dance, damned for eternity.
+		}
+
+		lonely_trader
+		{
+			I am usually too scared to talk. Ill trade later.
+
+			you will be able to trade once all skills are over the level of 70
+
+		}
+	}
+
+}

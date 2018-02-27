@@ -1,0 +1,159 @@
+ Food
+{
+		cookable:
+			-raw_cod
+			{
+				cooking_lvl: 1
+				health_recovery_when_cooked: 5
+				
+			}
+			-raw_salmon
+			{
+				cooking_lvl: 5
+				health_recovery_when_cooked: 10
+				 
+			}
+			-raw_lobster
+			{
+				cooking_lvl: 15
+				health_recovery_when_cooked: 20
+				 
+			}
+			-raw_tuna
+			{
+				cooking_lvl: 25
+				health_recovery_when_cooked: 35
+ 			}
+			raw_sword_fish
+			{
+				cooking_lvl: 40
+				health_recovery_when_cooked: 48
+ 			}
+			raw_shark
+			{
+				cooking_lvl: 60
+				health_recovery_when_cooked:60
+ 			}
+			raw_octopus:
+			{
+				cooking_lvl: 75
+				health_recovery_when_cooked:74
+ 			}
+			raw_giant_squid
+			{
+				cooking_lvl: 90
+				health_recovery_when_cooked: 85
+ 			}
+
+			-raw_chicken
+			{
+				cooking_lvl: 1
+				health_recovery_when_cooked:5
+			}
+			-raw_meat
+			{
+				cooking_lvl: 1
+				health_recovery_when_cooked:5
+			}
+			-rat_tail
+			{
+				cooking_lvl 5:
+				health_recovery_when_cooked:10
+			}
+			-raw_giant_meat
+			{
+				cooking_lvl: 30
+				health_recovery_when_cooked:42
+			}
+			-raw_bat_wings
+			{
+				cooking_lvl: 35
+				health_recovery_when_cooked: 48
+			}
+			-raw_dragon_meat
+			{
+				cooking_lvl:60
+				health_recovery_when_cooked: 60
+			}
+		
+		perishables:
+			-grapes
+			{
+				health_recovery : 5
+			}
+			-strawberries
+			{
+				health_recovery: 10
+			}
+			-apple
+			{
+				health_recovery: 14
+			}
+			-banana
+			{
+				health_recovery: 12
+			}
+			-coconut
+			{
+				health_recovery: 8
+			}
+			-outstar_fruit
+			{
+				health_recovery : 30
+			}
+
+			disaster_fruit
+			{
+				change to hurt or heal you
+				hurt always hurts more that heal random_num between (-20, 10)
+			}
+			gargantuan_fruit
+			{
+				heals 75% of your health
+			}
+			dormant_fruit
+			{
+				will slow you down by 20%
+				heal you by 40%
+			}
+			lightning_fruit
+			{
+				speed you up 50% for 2 minutes
+
+			}
+			razor_fruit
+			{
+				makes you bleed out for 30 seconds 1%/second
+				sharpens weapon you hold (+20% attack) for 1 minute
+			}
+
+		drinks:
+			{
+				bucket_of_water
+				{
+					rehydrate : 5 drinks / bucket
+					use bucket with watersource
+				}
+				bucket_of_apple_juice
+				{
+					rehydrate : 5 drinks / bucket
+					use bucket with apples
+				}
+				bucket_of_beer
+				{
+					rehydrate : 5 drinks / bucket
+					leave bucket_of_apples anywhere for 2 days game time (48) minutes
+				}
+				bucket_of_grape_juice
+				{
+					rehydrate : 5 drinks / bucket
+					use bucket with grapes
+				}
+				bucket_of_wine
+				{
+					rehydrate : 5 drinks / bucket
+					leave bucket_of_grape_juice anywhere for 2 days game time (48) minutes
+				}
+				
+
+			}

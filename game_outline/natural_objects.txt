@@ -1,0 +1,185 @@
+natural_game_objects
+{
+respawn in specific areas after timer
+	trees
+	{
+		birch
+		{
+			+1 if they make items out of this wood
+
+			lvl to chop: 1
+			respawn time: 1:00
+			max_spawn: 50/per area
+		}
+		maple
+		{
+			+5 if they make items out of this wood
+
+			lvl to chop: 15
+			respawn time: 1:30
+			max_spawn: 40/per area
+		}
+		willow
+		{
+			+10 if they make items out of this wood
+
+			lvl to chop: 30
+			respawn time: 2:00
+			max_spawn: 30/per area
+		}
+		oak
+		{
+			+18 if they make items out of this wood
+
+			lvl to chop: 49
+			respawn time: 2:30
+			max_spawn: 20/per area
+		}
+		magic
+		{
+			+27 if they make items out of this wood
+
+			lvl to chop: 65
+			respawn time: 4:00
+			max_spawn: 10/per area
+		}
+		demonic
+		{
+			+39 if they make items out of this wood
+
+			lvl to chop: 80
+			respawn time: 8:00
+			max_spawn: 4/per area
+		}
+	}
+
+	Fruit_bearing_trees_and_plants
+	{
+		disappear when harvested
+		gets seeds from the fruit
+		apple_tree
+		{
+			farming_lvl 1
+
+			fruit: apples
+		}
+		apricot_tree
+		{
+			farming_lvl 5
+
+			fruit: apricots
+		}
+		banana_tree
+		{
+			farming_lvl 16
+
+			fruit: bananas
+		}
+		palm_tree
+		{
+			farming_lvl 11
+
+			fruit: coconut
+		}
+		instar_tree
+		{
+			farming_lvl 50
+
+			fruit: outstar_fruit
+		}
+		disaster_tree
+		{
+			farming_lvl 65
+
+			fruit: disaster_fruit
+		}
+		gargantuan_tree
+		{
+			farming lvl 71
+
+			fruit: gargantuan_fruit
+		}
+		dormant_tree
+		{
+			farming_lvl 79
+
+			fruit: dormant_fruit
+		}
+		lightning_tree
+		{
+			farming_lvl 88
+			fruit: lightning_fruit
+		}
+		razor_tree
+		{
+			farming lvl 94
+
+			fruit: razor_fruit
+		}
+
+		gold_tree
+		{
+			farming lvl 99
+
+			bears gold
+		}
+
+	}
+	rocks
+	{
+
+		stone
+		{
+			lvl to mine :1
+		}
+		iron_rock
+		{
+			lvl to mine :15
+		}
+		coal_deposit
+		{
+			lvl to mine :30
+		}
+		sulfur_rock
+		{
+			lvl to mine :48
+		}
+		diamond_rock
+		{
+			lvl to mine :75
+		}
+		demonic_rock
+		{
+			lvl to mine :87
+		}
+
+	}
+	plants
+	{
+		strawberry_bush
+		{
+			farming lvl:1
+		}
+		apple_tree
+		{
+			farming lvl:15
+		}
+		banana_tree
+		{
+			farming lvl:24
+		}
+		flax
+		{
+			farming lvl: 30
+		}
+		palm_tree
+		{
+			farming lvl: 50
+		}
+		grape_vine
+		{
+			farming lvl:60
+		}
+	}
+
+}

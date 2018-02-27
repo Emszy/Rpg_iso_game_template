@@ -1,0 +1,273 @@
+Archery:
+	**indicates must be by workbench lvl 2
+
+
+			-birch_arrow_shaft
+			{
+				birch_log:5
+				string:2
+
+				bonuses: +1 archery
+			}
+			-maple_arrow_shaft
+			{
+				maple_log:5
+				string:2
+
+				bonuses: +5 archery
+			}
+			-willow_arrow_shaft
+			{
+				willow_log:5
+				string:2
+
+				bonuses: +10 archery
+			}
+			-oak_arrow_shaft
+			{
+				oak_log:5
+				string:2
+
+				bonuses: +18 archery
+			}
+			-magic_arrow_shaft  **
+			{
+				magic_log:5
+				string:2
+
+				bonuses: +27 archery
+			}
+			-demonic_arrow_shaft  **
+			{
+				demonic_log:5
+				string:2
+
+				bonuses: +39 archery
+			}
+			-birch_bow
+			{
+				birch_log:5
+				string:2
+
+				bonuses: +1 archery
+			}
+			-maple_bow
+			{
+				maple_log:5
+				string:2
+
+				bonuses: +5 archery
+			}
+			-willow_bow
+			{
+				willow_log:5
+				string:2
+
+				bonuses: +10 archery
+			}
+			-oak_bow
+			{
+				oak_log:5
+				string:2
+
+				bonuses: +18 archery
+			}
+			-magic_bow  **
+			{
+				magic_log:5
+				string:2
+
+				bonuses: +27 archery
+			}
+			-demonic_bow  **
+			{
+				demonic_log:5
+				string:2
+
+				bonuses: +39 archery
+			}
+
+			-iron_arrows
+			{
+				how_to_craft:
+					iron_bar:1
+					arrow_shaft: 1
+					feathers:2
+
+					bonuses: +5 + arrow_shaft_type_bonus archery
+			}
+			-steel_arrows
+			{
+				how_to_craft:
+					steel_bar:1
+					arrow_shaft:1
+					feathers: 2
+
+					bonuses: +11 + arrow_shaft_type_bonus archery
+			}
+			-diamond_arrows  **
+			{
+				how_to_craft:
+					diamond:1
+					arrow_shaft:1
+					feathers:2
+
+					bonuses: +21 + arrow_shaft_type_bonus archery
+			}
+			-demonic_arrows  **
+			{
+				how_to_craft:
+					demonic_bar:2
+					arrow_shaft:1
+					feathers:2
+
+					bonuses: +33 + arrow_shaft_type_bonus archery
+			}
+			-birch_blow_gun
+			{
+				3 birch_logs
+
+				bonus + 1 archery
+			}
+			-maple_blow_gun
+			{
+				3 maple_logs
+
+				bonus + 5 archery
+			}
+			-willow_blow_gun
+			{
+				3 willow_logs
+
+				bonus +11 archery
+			}
+			-oak_blow_gun
+			{
+				3 oak_logs
+
+				bonus +18 archery
+			}
+			-magic_blow_gun  **
+			{
+				3 magic_logs
+
+				bonus + 22 archery
+			}
+			-demonic_blow_gun  **
+			{
+				3 demonic_logs
+
+				bonus + 31 archery
+			}
+			-musket
+			{
+				metal_pipe: 1
+				firing_pin: 1
+				or
+				dropped by musketeer
+
+				bonuses: +15 archery
+			}
+			-iron_bullet
+			{
+				iron_bar:1
+				gun_powder:1
+
+				bonuses: +4 archery
+			}
+			-steel_bullet
+			{
+				steel_bar:1
+				gun_powder:1
+
+				bonuses: +8 archery
+			}
+
+			-diamond_bullet  **
+			{
+				steel_bar:1
+				gun_powder:1
+
+				bonuses: +15 archery
+			}
+
+			-demon_bullet  **
+			{
+				steel_bar:1
+				gun_powder:1
+
+				bonuses: +27 archery
+			}
+
+			-musketeer_hat
+			{
+				dropped by musketeer
+
+				+1 archery
+				+10 defence
+			}
+			-musketeer_robe
+			{
+				dropped by musketeer
+
+				+1 archery
+				+10 defence
+			}
+
+			-dart_gun
+			{
+				dropped by tranquilizing_hunter
+
+				+ 21 archery
+			}
+			-poison_darts
+			{
+				dropped by tranquilizing_hunter
+				can be crafted with
+					any_type dart + bottle_of_poison
+					
+			}
+			-iron_darts
+			{
+				dropped by tranquilizing_hunter
+				can be crafted with:
+					3 feathers
+					1 iron_bar
+
+					+12 archery
+			}
+			-steel_darts
+			{
+				dropped by tranquilizing_hunter
+				can be crafted with:
+					3 feathers
+					1 steel_bar
+
+					+17 archery
+			}
+			-diamond_darts  **
+			{
+				dropped by tranquilizing_hunter
+				can be crafted with:
+					3 feathers
+					1 diamond
+
+					+25 archery
+			}
+			-demon_darts  **
+			{
+				dropped by tranquilizing_hunter
+				can be crafted with:
+					3 feathers
+					1 demon_bar
+
+					+31 archery		
+			}
+			-bombs (max = 50) **
+			{
+				equip for primary hand
+				can be crafted with:
+					10 gunpowder
+
+
+			}

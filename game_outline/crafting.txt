@@ -1,0 +1,34 @@
+crafting
+{
+	make the ui with all of the materials, categorized.
+	highlight the ones that you can craft at the moment based on your inventory, crafting supplies needed are written in the materials and equipment categories. also bonuses and other fun facts are located with the item in its category.
+
+	___________________________________________________
+	|sub_category category
+	|
+	| Item  	Item  	Item  	Item  		sub category1
+	|
+	| Item  	Item  	Item  	Item  		sub category2
+	|
+	| Item  	Item  	Item  	Item  		sub category3
+	|
+	| Item  	Item  	Item  	Item  		sub category4
+	|
+	|weapons  | armor | Magic | Archery | building | category(n)
+	____________________________________________________
+	ex:
+	___________________________________________________
+	| Wooden weapons
+	|
+	| stick  	shield 	chest  	legs  		Iron Weapons
+	|
+	| club  		  		  		  		Steel Weapons
+	|
+	| 	  		  		  		  			Diamond Weapons
+	|
+	| 	  		  		  		  			Demonic Weapons
+	|
+	|weapons  | armor | Magic | Archery | building
+	____________________________________________________
+
+}

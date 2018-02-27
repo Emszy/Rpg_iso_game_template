@@ -1,0 +1,366 @@
+ players
+	I. controls:
+			-coordinate_restraints
+			{
+				no moving off the map
+				{
+					simple mapwidth and height check
+				}
+				through walls
+				{
+					basic collision
+
+				}
+				through enemies
+				{
+					basic collision
+				}
+				through minions
+				{
+					basic collision
+				}
+			}
+			-keys
+			{
+				wasd = movement
+				{
+					adds or subtracts velocity to or from a speed to add to position
+					moves map to match your movement
+					look the direction of the corresponding key
+					N S E W NW NE SW SE
+					check_coordinate_restraints
+				}
+				shift = run
+				{
+					raises max_velocity by a default percent + agility_lvl
+					you get tired in a certain amount of seconds * agility_lvl / some_constant
+					gain experience for every minute of running * lvl
+
+				}
+				1 - 5
+				{
+					hot keys for potions and spells
+
+					-----------------------------------------------------------------
+					|1.Potions		|Summon		|empty		|empty		|empty		|
+					-----------------------------------------------------------------
+					 drag and drop or highlight item and click slot
+					 if existing slot , switch items
+
+
+					 pressing hot key triggers,
+					 if empty
+					 	do nothing
+					 if available
+					 	use item
+					 else
+					 	do nothing
+
+				}
+			}
+			q - block
+			{
+				facing_direction determines which way you block
+				blocking with shield blocks 70% more damage
+			}
+
+			-space = use/action
+			{
+
+				within a use radius or bounding box
+				{
+					basic collision
+				}
+				facing_direction determines which way you
+				swing_sword, shoot_bow, shoot_dart, shoot_gun, swing_axe
+
+
+			}
+			-click = use/action
+			{
+				some items within a use radius/boundingbox
+				click on elements in the inventory
+				click on things to craft when the crafting_ui is up
+				click crafting_bench to open crafting_ui
+				click item then furnace to smelt or drag n drop
+				click furnace to bring up smelting ui
+				{
+					show what you can smelt / exists
+				}
+				click raw_food then fire to cook or drag n drop
+				click fire to open cooking ui
+				{
+					shows what you can cook / exists
+					highlights what is possible from inventory
+				}
+				click oven to cook or drag n drop
+				{
+					shows what you can cook / exists
+					highlights what is possible from inventory
+				}
+				click water to fish
+				{
+					will open ui of what type of fishing you can do / exists
+					click pole, net, spear, then water to fish like that
+					chances of catching fish depends on fishing lvl / item, 
+
+				}
+			}
+
+	II. collision with objects
+			-enemies
+			{ 
+				if enemy is attacking and you are within range
+					you get hurt
+			}
+			-objects
+			{
+				if you can pick them up, 
+					click to put into inventory
+				if you can walk over it but it hurts you
+				 you get hurt
+				if it is solid
+				{
+					you cant walk through it
+				}
+				if it is solid sometimes
+				{
+					if it is solid right now
+						you cant walk through
+					if it is not_solid
+						you can walk through
+				}
+			}
+			-projectiles
+			{
+				fires whichever way you are looking once you hit fire
+				bullet has collision function built in to see if it hits.
+			}
+
+
+	III. inventory
+		{
+			consists of an array of twenty-four slots
+			tab of player ui
+			{
+				be able to click (check collision of mouse coordinate to ui_draw_position)
+				NOT TO SCALE
+				_________________________________________________________________
+				|									|				*settings	|
+				|									|		player_equipment	|
+				|									|							|
+				|									|							|
+				|									|---------------------------|
+				|			  PLAYER				|I1	 	I2  	I3  	I4	|
+				|									|I5	 	I6	 	I7	 	I8	|
+				|									|I9	 	I10 	I11 	I12	|
+				|									|I13 	I14 	I15 	I16	|
+				|								    |I17	I18	    I19	    I20	|
+				|								    |I21	I22	    I23	    I24	|
+				|									_____________________________
+				|									|mini_map | Magic | Inventory|
+				_________________________________________________________________
+
+
+
+				mousedown to drag items for hot keys / smelting
+				mouseup use the items default action i.e use potion, equip sword
+
+			}
+		}
+
+	VI. Equipment 												*Maybe 2 uis? *maybe a cool Graph too?
+	______________________________________________________________________________________________________
+	|										gold:0  |									
+	|												|**						head	arrows		
+	|												|**						  |		
+	|												|**			sword/bow -	Torso - shield/bow
+	|												|**						  |
+	|												|**						legs
+	|												|**						  |
+	|												|**						feet	curr_defence
+	|												|								curr_attack
+	|												|								curr_strength
+	|												|								curr_agility
+	|												|								curr_archery
+	|												|								curr_magic
+	|												|		
+	|					player						|Mini_map | Skills |  Magic | Inventory | Equipment | Settings
+	|												|---------------------------|
+	|			 									|Item1	 	Item2  		Item3  		Item4
+	|												|Item5	 	Item6	 	Item7	 	Item8
+	|												|Item9	 	Item10 		Item11 		Item12
+	|												|Item13 	Item14 		Item15 		Item16
+	|								    			|Item17		Item18	    Item19	    Item20
+	|								    			|Item21		Item22	    Item23	    Item24
+	|												_____________________________
+	|												|Mini_map | Skills |  Magic | Inventory | Equipment | Settings
+	______________________________________________________________________________________________________
+			-headgear
+			{
+				holds headgear items
+			}
+			-torso
+			{
+				chest armor and clothing
+			}
+			-legs
+			{
+				hold legs armor and clothing
+			}
+			-boots
+			{
+				holds boots and shoes
+			}
+			-hand - sword/tool
+			{
+				for holding swords, bows, pickaxes and hatchets
+			}
+			-shield
+			{
+				holds a shield
+				if bow or two handed item is equipped
+					dequip bow or two handed item
+			}
+
+
+
+	V. fighting
+			-collision when swinging
+			{
+				have sword separate and just check collision
+				sword swings according to your position and facing direction
+			}
+			-shooting bows
+			{
+				only shoot in direction you are facing
+
+			}
+			-death (loss xp / items)
+			{
+				game_modes
+				{
+					infinite lives
+					one life
+					three lives
+				}
+
+					difficulty
+					{
+						easy
+						medium
+						hard
+					}
+				}
+
+			}
+			-xp
+			{
+				lvl up depending on fighting style
+				hp always gets xp in battle
+
+			}
+
+	VI. skills
+			health
+			{
+			 	starts at lvl 1
+			 	increases by amount of damage inflicted and amount inflicted on you
+			 	goes down when hit or under spell / potion
+			}
+			attack  (toggle fighting style)
+			{
+				starts at lvl 1
+				increases when toggle is on attack by amount of damage inflicted
+				adds to accuracy of hit
+				makes you hit a little harder
+			}
+			strength (toggle fighting style)
+			{
+				starts at lvl 1
+				increases when toggle is on strength by amount of damage inflicted
+				adds to strength of hit
+				makes you hit harder
+			}
+			defence (toggle fighting style)
+			{
+				starts at lvl 1
+				increases when toggle is on defence by amount of damage inflicted
+				adds to defense stat
+				makes you get hit less
+				makes hits on player have less damage
+			}
+			agility
+			{
+				determines how fast and how far you can run
+				total weight of player slows player down
+			}
+			archery
+			prayer
+			fishing
+			magic
+			woodcutting
+			mining
+			crafting
+			farming
+
+
+	VII.  depletion_bars
+	{
+		gold
+		{
+			displays how much gold you have
+		}
+		health
+		{
+			health level equals max hp
+			if
+				health reaches zero you die and restart
+
+		}
+		hunger
+		{
+			depletes 1% every 18 seconds 
+			if stamana < 10%
+				depletes 1% every 17 seconds
+		}
+		hydration
+		{
+			depletes 1% every 18 seconds
+			if stamana < 10%
+				depletes 1% every 15 seconds
+		}
+		stamina
+		{
+			depletes after pressing the key "e"
+			replenishes rate is based on agility lvl. 
+			1 % every (110 seconds - agility_lvl) / 2 rounded_down
+		}
+	}
+
+
+	VIII. Tracking
+	{
+		kills
+		{
+			adds when you get any kill
+		}
+		deaths
+		{
+			adds when  you die
+		}
+		longest_life
+		{
+			keeps track of longest life lived in days(24 minutes*days) + minutes
+		}
+		minutes_sprinting
+		{
+			almost equivalent to agility_lvl
+
+			keeps track of how long your have sprinted across the map
+		}
+
+	}
+
+
+

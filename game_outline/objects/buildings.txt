@@ -1,0 +1,151 @@
+building_materials
+	{
+	must upgrade existing wall 
+		wood_stick_wall
+		{
+			wood:5
+
+			hp:10
+
+			crafting_lvl: 1
+		}
+		wooden_wall
+		{
+			wood:30
+
+			hp:100
+
+			crafting_lvl: 5
+		}
+		stone_wall
+		{
+			stone: 30
+
+			hp:1000
+
+			crafting_lvl: 15
+		}
+		iron_wall
+		{
+			iron_bar: 30
+
+			hp:10,000
+
+			crafting_lvl: 30
+		}
+		metal_wall
+		{
+			steel_bar:30
+
+			hp: 50,000
+
+			crafting_lvl: 46
+		}
+		diamond_wall
+		{
+			diamond: 40
+
+			hp:100,000
+
+			crafting_lvl: 62
+		}
+		demonic_wall
+		{
+			demonic_bar: 50
+
+			hp: 1,000,000
+
+			crafting_lvl: 80
+		}
+
+		wood_skeleton_door
+		{
+			anytype_logs :5
+
+			hp: 10
+
+			crafting_lvl: 1
+		}
+		wooden_door
+		{
+			anytype_logs :10
+
+			hp: 100
+
+			crafting_lvl: 5
+		}
+		stone_door
+		{
+			stone: 20
+
+			hp:1,000
+
+			crafting_lvl: 15
+		}
+		iron_door
+		{
+			iron_bar: 20
+
+			hp:10,000
+
+			crafting_lvl: 30
+		}
+		metal_door
+		{
+			steel_bar:20
+
+			hp:50,000
+
+			crafting_lvl: 46
+		}
+		diamond_door
+		{
+			diamond: 25
+
+			hp:100,000
+
+			crafting_lvl: 62
+		}
+		demonic_door
+		{
+			demonic_bar: 30
+
+			hp:1,000,000
+
+			crafting_lvl: 80
+		}
+		windows
+		{
+			glass:10
+		}
+
+	}	
+}
+
+houses
+{
+	break down doors steal stuff
+	build your own house for shelter, 
+	things are more agressive at night
+	walls are square
+	build a door to get in and out
+	you can add a window to anywall at anytime
+	highlight hammer and click wall with proper material to upgrade
+
+
+			 upgrade from start to finish
+			 ____________________________
+					wooden_sticks
+						  |
+					wooden_wall
+						  |
+					  iron_wall
+						  |
+					  steel_wall
+						  |
+					 diamond_wall
+						  |
+					  demon_wall
+						  |
+
+}

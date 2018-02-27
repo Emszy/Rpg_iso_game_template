@@ -1,0 +1,20 @@
+You are a poor villager in a world with a strict heiarchy. You found a book in grandpa's attic that explained that, while it is what it is, it wasn't always this way. It showed of primitive drawings and villages that got along with each other. You vowed to fight your way to the top, defeating the king, and his diamond_ork, creating a free land to prosper as it shall. But first your still poor and not only that, your weak. lets get started with your training.
+
+
+
+8. interactions
+{
+	talking to people vs fighting the people
+	interactions with environment
+	planting seeds.
+	picking up items
+}
+
+9. animations
+{
+	set up objects for picture and iterators so i can slowly integrate it into the game as i get the animations
+	for all the characters.s
+}
+
+
+

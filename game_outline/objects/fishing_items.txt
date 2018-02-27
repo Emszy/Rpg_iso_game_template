@@ -1,0 +1,106 @@
+Fishing Items
+{
+
+	fishing_pole
+	{
+		craft:
+			2 any_log
+			2 string
+
+		catches:
+			raw_cod
+
+		fishing_lvl_req: 1
+	}
+
+	net
+	{
+		craft:
+			 5 string
+		catches:
+			raw_salmon
+
+		fishing_lvl_req: 5
+	}
+
+
+	lobster_cage
+	{
+		craft:
+			2 any_log
+			4 any_arrow_shaft
+		catches:
+			raw_lobster
+			sometimes raw_tuna
+
+		fishing_lvl_req: 10
+
+	}
+	iron_harpoon
+	{
+		craft:
+			2 iron_bars
+			2 logs_any_type
+		catches:
+			raw_tuna
+
+		fishing_lvl_req: 25
+
+	}
+	steel_harpoon
+	{
+	craft:
+			2 steel_bars
+			2 logs_any_type maple+
+		catches:
+			raw_sword_fish
+
+		fishing_lvl_req: 40
+
+	}
+
+** Must be By workbench lvl 2 **
+________________________________
+	diamond_harpoon
+	{
+		craft:
+			2 diamonds
+			2 logs_any_type oak+
+		catches:
+			raw_shark
+
+		fishing_lvl_req: 55
+
+	}
+	trench_trap
+	{
+		craft:
+			1 demonic_bar
+			3 diamonds
+			10 steel_bars
+			2 iron_bars
+
+		catches:
+			raw_octopus
+
+		fishing_lvl_req: 70
+	}
+	giant_hook
+	{
+		craft:
+			5 demonic_bar
+			10 diamonds
+			20 steel_bars
+			50 iron_bars
+
+		catches:
+			raw_giant_squid
+
+		fishing_lvl_req: 87
+		
+	}
+
+
+
+
+}

@@ -1,0 +1,44 @@
+		-wood
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+
+		birch_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+		maple_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+		willow_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+		oak_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+		magic_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+		}
+		demonic_logs
+		{
+			Used to craft wooden items
+
+			aqcuire: drops, woodcutting, picking up
+				
+		}

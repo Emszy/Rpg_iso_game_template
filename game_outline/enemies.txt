@@ -1,0 +1,668 @@
+3. enemies
+{	
+
+	enemy_object
+	{
+		description:
+
+		position:
+
+		animations/setup:
+
+		collision_function:
+		
+		walking_path: [default / idle / fighting];
+
+		lvl:
+		rarity:
+		size:
+		health :
+		speed :
+		attack_speed :
+		attack:
+		strength:
+		defence:
+		archery:
+		magic:
+		clustered:
+		drop: []
+
+
+
+	}
+
+	I. Type
+
+			-rat
+			{
+				Basic animal found in the sewers and castle streets, some are known to have rabies.
+				Too bad there aren't any doctors around.
+
+				lvl: 1-4
+				rarity: common
+				size: small
+				attack: lvl
+				strength: lvl
+				defence: lvl
+				archery: none
+				magic: none
+				speed: medium
+				clustered: yes
+				drop: meat, rat_tail, bones
+			}
+			-man
+			{
+				just a regular man, holds down his family and home with a steady 9-5 working
+				at the stable. Do all men work at the stable? Well, yeah, because they aren't a 
+				blacksmith.
+
+				lvl: 3-6
+				rarity: common
+				size: medium
+				attack: (lvl + 1)
+				strength: (lvl + 1)
+				defence: (lvl + 2)
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: gold, wooden_stick, meat, stone, air_stone, earth_stone, fire_stone, water_stone, bones
+
+			}
+			-goblin
+			{
+				sort of a buggy turtle gone human. We used to think they came from outer space,
+				turns out they are just from the stratosphere.
+
+				lvl: 2-6
+				rarity: common
+				size: medium - 1
+				attack:  (lvl + 2)
+				strength:  (lvl + 1)
+				defence:  (lvl + 1)
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: gold, feathers, ashes, bones
+
+			}
+			-warthog
+			{
+				A warthog is kind of like a big, but bigger, and meaner, and with tusks.
+				He's not so tough with arrows though.
+
+				lvl: 4-10
+				rarity: common
+				size: medium + 1
+				attack: (lvl + 3)
+				strength: (lvl + 3)
+				defence: (lvl + 5)
+				archery: none
+				magic: none
+				speed: medium
+				clustered: yes
+				drop: tusks, meat, large_meat, bones , fur
+
+			}
+			-bat_swarm
+			{
+				watch out for the swarm of bats, they are like rats but with a b. and they 
+				have wings too.
+
+				lvl: 4-7
+				rarity: common
+				size: very_small
+				attack: lvl + 2
+				strength: lvl + 2
+				defence: lvl - 1
+				archery: none
+				magic: none
+				speed: fast
+				clustered: yes
+				drop: bones, bat_wings
+			}
+			-chickens
+			{
+				your just a chicken.
+
+				lvl: 1 - 3
+				rarity: common
+				size: very_small
+				attack: 1
+				strength:0
+				defence:0
+				archery:none
+				magic:none
+				speed: fast
+				clustered: yes
+				drop: feathers, bones, raw_chicken
+			}
+			-monkey
+			{
+				Quit monkeying around and give me the nana.
+
+				lvl: 5-10
+				rarity: common
+				size: medium
+				health : 100;
+				attack: lvl +  4
+				strength: lvl + 3
+				defence: lvl + 2
+				archery: toggle
+				magic: none
+				speed: fast
+				clustered: no
+				drop: bones, fur, banana, apple
+
+			}
+			-knight
+			{
+				good knight.
+
+				lvl:7-14
+				rarity: common
+				size: medium + 1
+				health : 100;
+				attack: lvl + 6
+				strength: lvl + 7
+				defence: lvl + 6
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: gold, wooden_sword, wooden_shield, hammer, iron_sword, apple, fur, bones, meat
+
+
+			}
+			-scorpion
+			{
+				Fiesty little guy aint he, and his defence is phenomenal.
+
+				lvl: 7-13
+				rarity: common
+				size: large
+				health : 100;
+				attack: lvl + 5
+				strength: lvl + 6
+				defence: lvl + lvl
+				archery: none
+				magic: none
+				speed: fast
+				clustered: no
+				drop: scorpion_stinger, bones, scorpion_meat, air_stone, earth_stone
+			}
+			-witch
+			{
+				A witch is a witch is a which.. wait which...witch, is which?
+
+				lvl: 10-18
+				rarity: rare
+				size: medium
+				health : 100;
+				attack: lvl + 10
+				strength: lvl + 10
+				defence: lvl + 10
+				archery: none
+				magic: yes
+				speed: slow
+				clustered: no
+				drop: air_stone, earth_stone, fire_stone, water_stone, light_stone, undead_stone,
+				bones, witch_hat, witch_robe, staff, fire_staff. light_staff
+			}
+			-giant
+			{
+				Wow, thats big
+
+				lvl: 13-20
+				rarity: medium
+				size: giant
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl
+				archery: none
+				magic: none
+				speed: slow
+				clustered: no
+				drop: gold, giant_bones, wooden_club, raw_giant_meat
+			}
+			-suicide_bomber
+			{
+
+				If your reading this, your too close.
+
+				lvl:15-18
+				rarity: medium
+				size: small
+				health : 100;
+				attack: lvl + lvl + 5
+				strength: lvl + lvl + 5
+				defence: lvl - 5
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: gold, bomb, gunpowder, cloth, iron
+			}
+			-bandit
+			{
+				she'll steal ya kids, and ya wife, and ya grandma, and the puppies.
+
+				lvl: 20 - 26
+				rarity: common
+				size: medium
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl + 5
+				archery: none
+				magic: none
+				speed: fast
+				clustered: no
+				drop: gold, iron_hatchet, cloak, running_boots
+			}
+			-skeleton
+			{
+				No guts.
+
+				lvl: 28-34
+				rarity: common
+				size: small
+				health : 100;
+				attack: lvl * 1.1
+				strength: lvl * 1.1
+				defence: lvl * 1.1
+				archery: none
+				magic: none
+				speed: fast
+				clustered: no
+				drop: bones, gold, gunpowder, bandana
+			}
+			-x_bow_tower
+			{
+
+				You don't wanna cross this tower.
+
+				lvl: 40-45
+				rarity: medium
+				size: large
+				health : 50;
+				attack: lvl
+				strength: lvl
+				defence: lvl
+				archery: none
+				magic: none
+				speed: very_fast
+				clustered: no
+				drop: auto_crossbow, bolts, iron_ore, steel_bar
+			}
+			-archer
+			{
+				Not even close. literally, hit you from far away.
+
+				lvl: 41-46
+				rarity: common
+				size: small
+				health : 100;
+				attack: lvl + 10
+				strength: lvl + 10
+				defence: lvl + 10
+				archery: none
+				magic: none
+				speed: fast
+				clustered: no
+				drop: bow, arrows, bones, gold, feathers, feather_boots
+			}
+			-giant_spider
+			{
+				and you were scared of the little ones.
+
+				lvl:44 - 50
+				rarity: medium
+				size: giant
+				health : 100;
+				attack: lvl * 1.1
+				strength: lvl * 1.1
+				defence: lvl * 1.1
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: cloth, venom, spider_eggs, spider_silk
+
+			}
+			-mage
+			{
+			lvl: 47-54
+				rarity: medium
+				size: medium
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.2
+				archery: none
+				magic: yes
+				speed: medium
+				clustered: no
+				drop: , mage_hood, mage_robe, staff, air_staff, earth_staff, fire_staff, water_staff, demonic_staff, undead_staff, clone_staff, rage_staff, compression_staff, multi_staff
+			}
+			-gypsy
+			{
+				If you manage to kill one, you get a crystal ball, look at it. would you just look at it.
+
+				lvl: 50-68
+				rarity: rare
+				size: small
+				health : 100;
+				attack: lvl
+				strength: lvl
+				defence: lvl * 4
+				archery: none
+				magic: yes
+				speed: fast
+				clustered: no
+				drop: crystal_ball, crystal_key
+			}
+			-drone
+			{
+				Its like a swarm of small bats, with guns and technology.
+
+				lvl: 55-60
+				rarity: common
+				size: small
+				health : 100;
+				attack: lvl
+				strength: lvl
+				defence: lvl
+				archery: none
+				magic: none
+				speed: very_fast
+				clustered: yes
+				drop: flight_controller, motor, battery, speed_controller
+			}
+			-soldier
+			{
+				hut-2-3-4 hut-2-3-4
+
+				lvl: 58-64
+				rarity: common
+				size: large
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.2
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: steel_sword, steel_shield, steel_body, steel_bar, steel_mace, steel_leggings, steel_hatchet, steel_arrows
+			}
+			-assassin
+			{
+				sneaky little bastage will sneak up on you with speed of a lightning bolt, but hits like a teddy bear.
+
+				lvl:60-67
+				rarity: medium
+				size: small
+				health : 100;
+				attack: lvl - 10
+				strength: lvl -10
+				defence: lvl
+				archery: none
+				magic: none
+				speed: very_fast
+				clustered: no
+				drop: steel_knife, light_boots, dark_boots, 
+			}
+			-musketeer
+			{
+				Is that a friggin Musket?!?
+
+				lvl: 65-70
+				rarity: common
+				size: medium
+				health : 100;
+				attack: lvl * 1.3
+				strength: lvl * 1.2
+				defence: lvl * 1.2
+				archery: yes
+				magic: none
+				speed: medium
+				clustered: no
+				drop: gold, gunpowder, bones, musket, metal_pipe, firing_pin, musketeer_hat, musketeer_robe
+			}
+			-town_gaurd
+			{
+				He's just gaurding the town, dont mind him.
+
+				lvl: 68-72
+				rarity: common
+				size: large
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.3
+				archery: none
+				magic: none
+				speed: medium
+				clustered: no
+				drop: bones, gold, steel_sword, steel_knife, steel_bar, steel_hatchet, steel_leggings,
+			}
+			-catapult
+			{
+				When arrows just aren't enough for the job.
+
+				lvl: 70-74
+				rarity: medium
+				size: large
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.2
+				archery: yes
+				magic: none
+				speed: very_slow
+				clustered: no
+				drop: gold, stone, wood, steel_bar
+			}
+			-princess
+			{
+				She is lovely isn't she. She heals everyone, even you.
+
+				lvl: 80-90
+				rarity: rare
+				size: small
+				health : 100;
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.4
+				archery: none
+				magic: yes
+				speed: fast
+				clustered: no
+				drop: gold, bones, witch_hat, witch_robe, mage_hood, mage_robe, staff, air_staff, earth_staff, fire_staff, water_staff, demonic_staff, light_staff, undead_staff, clone_staff, rage_staff, wolf_staff, compression_staff, multi_staff, princess_tiara
+			}
+			-demon
+			{
+				Big, scary, from Hell.
+
+				lvl: 75-82
+				rarity: medium
+				size: large
+				health : 100;
+				attack: lvl * 1.3
+				strength: lvl * 1.3
+				defence: lvl * 1.3
+				archery: none
+				magic: toggle
+				speed: medium
+				clustered: no
+				drop: gold, ash, soul_in_a_bottle
+			}
+			-gargoyle
+			{
+				Snuck out of hell with a bunch of demons, been on hells top ten most wanted ever since.
+
+				lvl:79-85
+				rarity: medium
+				size: large
+				health : 100;
+				attack: lvl * 1.3
+				strength: lvl * 1.3
+				defence: lvl * 1.3
+				archery: none
+				magic: toggle
+				speed: medium
+				clustered: no
+				drop: gold, ash, soul_in_a_bottle, light_staff
+			}
+			-tranquilizing_hunter
+			{
+				Sleepy Darts here, get ya sleepy Darts!
+
+				lvl: 84-89
+				rarity: rare
+				size: large
+				health : 100
+				attack: lvl * 1.2
+				strength: lvl * 1.2
+				defence: lvl * 1.2
+				archery: yes
+				magic: none
+				speed: fast
+				clustered: no
+				drop: gold, bones, dart_gun, poison_darts, iron_darts, steel_darts, diamond_darts, demon_darts, hunting_jacket, hunting_pants, wood, feathers, 
+			}
+			-baby_dragon
+			{
+				Awhh, just a widdle baby fire breathing ferocious dragon.
+
+				lvl:86-90
+				rarity: common
+				size: large
+				health : 100;
+				attack: lvl 1.4
+				strength: lvl 1.4
+				defence: lvl 1.4
+				archery: none
+				magic: none
+				speed: fast
+				clustered: no
+				drop: baby_dragon_bones, gold, fire_in_a_bottle, dragon_meat
+			}
+			-dragon
+			{
+				Awhh, just a giant version of the widdle baby fire breathing ferocious dragon.
+
+				lvl: 90-94
+				rarity: common
+				size: giant
+				health : 100;
+				attack: lvl * 1.5
+				strength: lvl * 1.5
+				defence: lvl * 1.5
+				archery: none
+				magic: none
+				speed:medium
+				clustered: no
+				drop: dragon_bones, gold, fire_in_a_bottle, dragon_meat
+			}
+			-looter
+			{
+				He steals from the rich and gives to himself. Steals from everyone actually, he's like a banker, only illegal.
+
+				lvl:91-94
+				rarity: common
+				size: small
+				health : 100;
+				attack: lvl * 1.4
+				strength: lvl * 1.4
+				defence: lvl * 1.4
+				archery: none
+				magic: none
+				speed: very_fast
+				clustered: no
+				drop: everything_in_game
+			}
+			-golem
+			{
+				Heavy, very very very very very very very heavy. Packs a whallop too.
+
+				lvl:94-97
+				rarity: medium
+				size: gigantic
+				health : 100;
+				attack: lvl * 1.3
+				strength: lvl * 1.3
+				defence: lvl * 3
+				archery: none
+				magic: none
+				speed: slow
+				clustered: no
+				drop: golem_bones, stone, earth_stone, earth_staff, diamond, gun_powder, metal_pipe, diamond_sword, diamond_mace, diamond_shield, diamond_body, diamond_leggings, diamond_arrows, diamond_hatchet, diamond_pickaxe
+			}
+			-diamond_ork
+			{
+				The boss of the game. If you kill this guy, well, kingdom is yours. You can do what you set out to do, or if you've been lyinh from the beginning. You can become the diamond ork controller. But you will have to fight yourself if you restart the game.
+
+				lvl: 99
+				rarity: super_rare
+				size: ginormous
+				health : 100;
+				attack: lvl * 3
+				strength: lvl * 3
+				defence: lvl * 3
+				archery: toggle
+				magic: toggle
+				speed: medium
+				clustered: no
+				drop:gold, stone, earth_stone, earth_staff, diamond, gun_powder, metal_pipe, diamond_sword, diamond_mace, diamond_shield, diamond_body, diamond_leggings, diamond_arrows, diamond_hatchet, diamond_pickaxe, genie_lamp
+			}
+
+
+
+	II. Skills / variables
+	{
+				lvl:
+				rarity:
+				size:
+				health :
+				speed : 
+				attack:
+				strength:
+				defence:
+				archery:
+				magic:
+				clustered:
+				drop:
+	}
+
+	III. Pathfinding / coordinate restraint
+
+			-find a* algorith or double check path array for conflicting tile
+
+			-don't render enemy if it is outside a certain view area.
+
+
+	VI. collision
+			-when to attack
+			{
+				within a certain area they lock onto your position
+			} 
+			-when to swing
+			{
+				within a certain area they swing at you
+			}
+			-when shoot
+			{
+				if range == true
+				they will shoot toward your position
+			}
+			-when to cast magic
+			{
+				if magic == true
+				they will cast a spell toward your position
+			}
+
+}

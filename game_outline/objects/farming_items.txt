@@ -1,0 +1,96 @@
+plants:
+	5 stages over (3 + plant_complexity) game days
+	stage 1
+		seeds planted, watered
+	stage 2
+		at %10
+		seed sprouts
+	stage 3 
+		at 40%
+		gets a little bigger
+	stage four
+		at 80%
+		starts to fruit
+	stage five
+		at 100%
+		harvest
+	stage 6 
+		at 200%
+		death and regrowth
+	if harvested you get seeds to replant
+
+
+
+seeds:
+			-grape_seed
+			{
+				plants_on: grass
+				farming_lvl 1
+			}
+			-strawberry_seed
+			{
+				plants_on: grass
+				farming_lvl 1
+			}
+			-apple_seed
+			{
+				plants_on: grass
+				farming_lvl 1
+			}
+			apricot_seed
+			{
+				plants_on: grass
+				farming_lvl 5
+			}
+			-banana_seed
+			{
+				plants_on: grass
+				farming_lvl 16
+			}
+			-coconut_seed
+			{
+				plants_on: beach
+				farming_lvl 11
+			}
+			-flax_seed
+			{
+				makes flax, turn into cloth
+				farming_lvl 30
+			}
+			instar_seed
+			{
+				produce_outstar tree
+				must plant on grass
+
+				farming lvl 50
+			}
+			disaster_seed
+			{
+				farming_lvl 65
+
+				fruit: disaster_tree
+			}
+			gargantuan_seed
+			{
+				farming lvl 71
+
+				tree: gargantuan_tree
+			}
+			dormant_seed
+			{
+				farming_lvl 79
+
+				tree: dormant_tree
+			}
+			lightning_seed
+			{
+				farming_lvl 88
+				tree: lightning_tree
+			}
+			razor_seed
+			{
+				farming lvl 94
+
+				tree: razor_tree
+			}
+

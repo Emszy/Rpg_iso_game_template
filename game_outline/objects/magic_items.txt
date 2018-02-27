@@ -1,0 +1,513 @@
+Magic_items
+	{
+		-robe
+		{
+			how_to_craft:
+				cloth
+			+2 defence
+			+2 magic
+		}
+
+		-witch_hat
+		{
+			dropped by witch
+			how_to_craft:
+				10 cloth
+
+			+5 defence
+			+6 magic
+		}
+
+		-witch_robe
+		{
+			how_to_craft:
+				20 cloth
+			dropped by witch
+			+5 defence
+			+4 magic
+
+		}
+
+		-mage_hood
+		{
+			dropped by mage
+
+			+15 magic
+			+17 defence
+		}
+
+		-mage_robe
+		{
+			dropped by mage
+			+17 magic
+			+21 defence
+		}
+
+		-staff
+		{
+			any_log_type:5
+
+			+3 magic
+		}
+
+		-air_staff
+		{
+			any_log_type:5
+			air_stone:100
+
+			+10 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		}
+
+		-earth_staff
+		{
+			any_log_type: 5
+			earth_stone: 100
+
+			+10 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		}
+
+		-fire_staff
+		{
+			any_log_type: 5
+			fire_stone: 100
+			+10 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+
+		}
+
+		-water_staff
+		{
+			any_log_type:5
+			water_stone: 100
+			+10 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		
+		}
+**workbench lvl 2 required
+__________________________
+
+		-demonic_staff
+		{
+			logtype_magic_and_up:15
+			demonic_stone: 200
+			+20 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		}
+
+		-light_staff
+		{
+			logtype_magic_and_up:15
+			light_stone:200
+			+25 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		}
+
+		-undead_staff
+		{
+			logtype_demonic_and_up:15
+			undead_stone:300
+
+			+30 magic
+
+			staff is worth 400 stones on creation
+			turns into staff when used up
+		}
+
+		-clone_staff
+		{
+			logtype_demonic_and_up: 25
+			clone_stone: 400
+
+			+35 magic
+
+			staff is worth 500 stones on creation
+			turns into staff when used up
+		}
+
+		-rage_staff
+		{
+			logtype_demonic_and_up: 25
+			rage_stone: 400
+
+			+35 magic
+
+			staff is worth 500 stones on creation
+			turns into staff when used up
+		}
+
+		-wolf_staff
+		{
+			logtype_demonic_and_up: 35
+			wolf_stone: 500
+
+			+40 magic
+
+			staff is worth 600 stones on creation
+			turns into staff when used up
+		}
+
+		-compression_staff
+		{
+			logtype_demonic_and_up: 35
+			compression_stone: 500
+
+			+45 magic
+
+			staff is worth 600 stones on creation
+			turns into staff when used up
+		}
+
+		-multi_staff
+		{
+			logtype_demonic_and_up:100
+			air_stone: 300
+			fire_stone: 300
+			water_stone: 300
+			earth_stone: 300
+			any: 500
+			princess_tiara:1 (fuse)
+
+			adding 500 of any type besides the basic will include it in the multi staff
+
+			+50 magic
+
+			staff is worth 1000 stones of each on creation
+			turns into staff when used up
+		}
+_______________________________________________________
+
+		air_stone
+		{
+			dropped or mined
+
+			used for air spells
+			wind_slice
+			wind_spin
+			wind_drop
+			wind_hold
+		}
+
+		earth_stone
+		{
+			dropped or mined
+
+			used for earth spells
+			earth_shake
+			earth_drop
+			earth_roll
+			earth_techtonic
+
+		}
+
+		fire_stone
+		{
+			dropped or mined
+
+			used for earth spells
+			fire_blaze
+			fire_wave
+			fire_fury
+			fire_wrap
+
+		}
+
+		water_stone
+		{
+			dropped or mined
+
+			used for earth spells
+				water_wrap
+				water_engulf
+				water_freeze
+				water_tsunami
+
+		}
+		demonic_stone
+		{
+			used to summon demons
+			summon 1
+			summon 3
+			summon 5
+			summon 8
+
+			fights for you and with you
+			best friends forever
+
+		}
+
+		light_stone
+		{
+			teleport
+			radius 1
+			radius 3
+			radius 5
+			radius 7
+		}
+
+		undead_stone
+		{
+			used to summon undead
+			summon 1
+			summon 2
+			summon 3
+			summon 4
+
+			can infect enemies, but the infected cant infect enemies
+
+		}
+
+		clone_stone
+		{
+			makes 2 clones of what you summon
+			health 25%
+			health 35%
+			health 50%
+			health 70%
+		}
+
+		rage_stone
+		{
+			used to enrage what you have summoned already
+			rage 10% for 5 seconds
+			rage 20% for 6 seconds
+			rage 30% for 7 seconds
+			rage 45% for 9 seconds
+
+		}
+
+		wolf_stone
+		{
+			summon a wolf to your side
+			wolf lvl 10
+			wolf lvl 30
+			wolf lvl 50
+			wolf lvl 70
+		}
+
+		compression_stone
+		{
+			used to control pressure and make explosions
+			compression_push
+			compression_wave
+			compression_smelt
+			compression_block
+		}
+
+		multi_stone
+		{
+			acts as an earth, fire, water, or air stone + stone of your choosing
+		}
+
+		ability_to_use_spells_lvl
+		{
+			lvl: 1  wind_slice
+			{
+				basic wind spell
+
+				fires a wind spell in facing_direction
+			}
+			lvl: 3  earth_shake
+			{
+				damages radius of level_1 around you
+			}
+			lvl: 4  fire_blaze
+			{
+				fires a fire spell in facing_direction
+			}
+			lvl: 6  water_wrap
+			{
+				shoots a wave of water in facing_direction
+			}
+			lvl: 7  summon_demon_1
+			{
+				summons 1 demons lvl 1 around you
+			}
+			lvl: 9  teleport_1
+			{
+				map zooms out teleport_radius_1
+
+				you can click anwhere within radius and teleport
+			}
+			lvl: 12  summon_undead_1
+			{
+				summons 1 undead zombies around you to help fight
+				they can infect enemies and turn them into undead
+			}
+			lvl: 13  clone_health 25%
+			{
+				clones all summoned monsters
+			}
+			lvl: 15  rage 10% for 5 seconds
+			{
+				rages all summoned  monster including self 10% of max for 5 seconds
+			}
+			lvl: 18  wolf_lvl_10
+			{
+				spawn a big wolf to help fight
+			}
+			lvl: 22  compression_push
+			{
+				stuns all enemies in a radius around you
+			}
+			lvl: 25  wind_spin
+			{
+				damage enemies in a tornado
+			}
+			lvl: 28  earth_crack
+			{
+				crack the ground in the facing_direction
+			}
+			lvl: 30  fire_wave
+			{
+				fires a wave of fire in the facing_direction
+			}
+			lvl: 31  water_engulf
+			{
+				fires a more powerful water wave at enemy
+			}
+			lvl: 35  summon_demon_3
+			{
+				summons 3 demons lvl 20 around you
+
+			}
+			lvl: 37  teleport_3
+			{
+				map zooms out teleport_radius_3
+
+				you can click anwhere within radius and teleport
+			}
+			lvl: 45  summon_undead_2
+			{
+				summons 2 undead zombies around you to help fight
+				they can infect enemies and turn them into undead
+			}
+			lvl: 46  clone_health 35%
+			{
+				clones all summoned monsters
+				35% of max health
+			}
+			lvl: 47  rage 20% for 6 seconds
+			{
+				rages all summoned  monster including self 10% of max for 5 seconds
+
+			}
+			lvl: 49  wolf_lvl_30
+			{
+				spawn a big wolf to help fight
+
+			}
+			lvl: 51  compression_wave	
+			{
+				send a wave that stunns and damages enemies
+			}
+			lvl: 54  wind_drop
+			{
+				a powerful wind attack
+			}
+			lvl: 58  earth_roll
+			{
+				rolls they earth and topples enemies
+			}
+			lvl: 60  fire_fury
+			{
+				a big radius fire attack
+			}
+			lvl: 63  water_freeze
+			{
+				freeze the enemy for 3 seconds
+			}
+			lvl: 64  summon_demon_5
+			{
+				summone 5 demons to help you fight
+			}
+			lvl: 67  teleport_radius 5
+			{
+				zoom out a teleport_radius_5
+				click anywhere to teleport
+			}
+			lvl: 69  summon_undead_3
+			{
+				summons 3 strong undead to fight alongside you
+			}
+			lvl: 70  clone_health 50%
+			{
+				clones all summoned monster
+				50% monsters health
+			}
+			lvl: 73  rage 30% for 7 seconds
+			{
+				rage all summoned monster 30% of their max
+			}
+			lvl: 75  wolf_lvl_50
+			{
+				summon a giant lvl 50 wolf
+			}
+			lvl: 79  compression_smelt
+			{
+				smelt material without a furnace, chance of 2 for 1
+			}
+			lvl: 82  wind_hold
+			{
+				entraps 5 enemies in a tornado for one day or until death
+			}
+			lvl: 84  earth_techtonic
+			{
+				a huge earthquake that can damage houses
+			}
+			lvl: 86  fire_wrap
+			{
+				wraps up to ten enemies in flames with constant damage
+			}
+			lvl: 89  water_tsunami
+			{
+				giant wave towards the facing_direction
+				capable of damaging homes
+			}
+			lvl: 91  summon_demon_8
+			{
+				summons 8 super demons to fight alongside you
+			}
+			lvl: 93  teleport_radius 7
+			{
+				basically teleport anywhere on map
+			}
+			lvl: 95  summon_undead_4
+			{
+				summon 4 extremely strong undead tanks to fight alongside you
+
+			}
+			lvl: 96  clone_health 70%
+			{
+				clone summoned monsters with 70% health
+				full strength
+			}
+			lvl: 97  rage 45% for 9 seconds
+			{
+				rage all summoned monster indcluding self 45% of max for 9 seconds
+			}
+			lvl: 98  wolf_lvl_70
+			{
+				summon lvl 70 giant permaraged wolf
+			}
+			lvl: 99  compression_block
+			{
+				blocks 99% of damage from every incoming hit  
+			}
+
+		}
+
+	}

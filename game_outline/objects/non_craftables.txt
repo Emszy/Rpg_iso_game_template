@@ -1,0 +1,152 @@
+
+		-bones
+		{
+			Used for prayer
+			bury gain 10xp;
+			acquire: killing things
+		}
+
+		-giant_bones
+		{
+			Used for prayer
+			bury gain 100xp
+			acquire: killing things
+		}
+
+		-baby_dragon_bones
+		{
+			Used for prayer
+			bury gain 5000 xp
+			acquire: killing things
+		}
+
+		-dragon_bones
+		{
+			Used for prayer
+			bury gain 10000xp
+
+			acquire: killing things
+		}
+
+		-golem_bones
+		{
+			Used for prayer
+			bury gain 25000 xp
+			acquire: killing things
+		}
+
+		-crystal_ball
+		{
+			dropped by gypsy, when used a random chest spawns on map. Ball then turns into crystal key.
+		}
+
+		-crystal_key
+		{
+			Used to unlock crystal chest
+		}
+
+		-spider_silk
+		{
+			used to make string
+		}
+
+		-ashes
+		{
+			dropped from furnaces, and demons
+		}
+
+		-feathers
+		{
+			dropped from chickens
+
+			used to make arrows and darts
+		}
+
+		scorpion_stinger
+		{
+			dropped by scorpion
+
+			use with glass to extract the poison
+		}
+
+		venom_sack
+		{
+			dropped by giant spider
+
+			use with glass to extract the poison
+
+		}
+
+		spider_eggs
+		{
+			dropped by giant spider
+
+			use with glass to extract poison
+		}
+
+		-running_boots
+		{
+			dropped by bandit
+			+7 agility
+		}
+
+		-feather_boots
+		{
+			dropped by archer
+			+18 agility
+		}
+
+		-light_boots
+		{
+			dropped by assassin
+			+27 agility
+		}
+
+		-dark_boots
+		{
+			dropped by assasin
+			+27 agility
+		}
+
+		-bandana
+		{
+			dropped by skeleton
+			+4 defence
+		}
+
+		
+		-hunting_jacket
+		{
+			dropped by tranquilizing_hunter
+			+20 defence
+			+10 archery
+		}
+
+		-hunting_pants
+		{
+			dropped by tranquilizing_hunter
+			 +10 defence
+			 +10 archery
+		}
+
+		tribe_mask
+		{
+			given by tribesman
+			+4 defence +5% max health
+			wear it to gain entrance into a secret cave, inside you will find a chest
+			and in the chest will be a crystal katana. 
+		}
+
+		-princess_tiara
+		{
+			must fuse with staff to make multistaff
+			dropped by princess
+		}
+
+		-soul_in_a_bottle
+		{
+			dropped by demon and gargoyle
+
+			if you let him our he will give you an undead staff and gold
+		}
+

@@ -1,0 +1,301 @@
+Game_modules
+	game_loop
+	{
+		var fps
+
+		initialize()
+		{
+			runs once for setup
+		}
+		check_fps()
+		{
+			check frames per second
+		}
+		update()
+		{
+			update game variables
+		}
+	}
+	tilemap_parser
+	{
+
+		load_tilemap()
+		{
+			load 2d array into memory
+		}
+		parse_array()
+		{
+			parse 2d array
+		}
+		place_tile()
+		{
+			put a tile at a coordinate
+			unless out of view range
+		}
+	}
+
+	player
+	{
+			module movement_system
+			module inventory_system
+			module crafting_system
+			module skill_system
+			module fighting_system
+			module talking_system
+	}
+	enemy
+	{
+		module movement_system
+		module skill_system
+		module inventory_system
+		module crafting_system
+		module fighting_system
+		module talking_system
+	}
+	npc
+	{
+		module talking_system
+		module movement_system
+		module shop_system
+	}
+	natural_objects
+	{
+		module harvesting_system
+		module skill_system
+
+	}
+	item_objects
+	{
+		module crafting_system
+		module item_system
+
+	}
+	
+module click_system
+{
+		inventory_click
+		{
+			drag item if click is not released, use_item or select_item if released inside
+			module inventory.coordinates
+			if outside inventory.coordinates
+				drop item on floor at current coordinates
+
+			drag useable items to quick use slots
+			wearable items are put on if mouse_release
+			edible items are eaten if mouse_release
+
+
+
+		}
+		crafting_click
+		{
+			open_crafting_ui
+			{
+				freeze_background_click()
+				gui.open(crafting_items_small_list)
+			}
+		}
+		crafting_bench_click
+		{
+			open_crafting_bench_ui
+			{
+				freeze_background_click()
+				gui.open(crafting_item_full_list)
+			}
+		}
+
+		wall_upgrade_click
+		{
+			wall.upgrade_check() => if yes - upgrade_wall
+
+
+		}
+		furnace_click
+		{
+			furnace_ui || current_clicked_item.smelt if smelt is true
+		}
+		wood_cut_click
+		{
+			if wielding_item is rock or hatchet
+			or you have a rock or hatchet in inventory
+			and your inventory is not full
+
+			tree.chop
+		}
+		mine_magic_stone_click
+		{
+			if wielding_item is rock or pick_axe
+			or you have a rock or pick_axe in inventory
+			and your inventory is not full
+
+			magic_stone.mine
+		}
+		mining_click
+		{
+			if wielding_item is rock or pick_axe
+			or you have a rock or pick_axe in inventory
+			and your inventory is not full
+
+			rock.mine
+		}
+
+		harvest_click
+		{
+			if your inventory is not full
+
+			plant.harvest
+		}
+		cooking_click
+		{
+			gui.open(cooking_item_list) or current_clicked_item.cook if current_clicked_item.cook is true
+		}
+}
+
+module gui
+{
+	places opaque square from coordinate x,y to specified width and height
+	scrolls through an array of respective display items, placing them in grid pattern of specified width and height. split into categories if needed
+	ex
+
+	---------------------------------------------------
+
+		------------------------
+			1 2 3 4		categ1	ex:armor
+			5 6 7 8  	categ2	   weapons
+			9 0 1 2		categ3	   bows
+			3 4 5 6		categ4	   projectiles
+		------------------------
+
+
+	----------------------------------------------------
+
+	goal is to be able to have inventory on the right
+	and be able to pull up a ui for crafting, cooking, smelting, inventory, shopping, and trading
+
+	special case for inventory
+	{
+		if dragging and mouse_released on collision with another item in inventory
+			items swap position in array
+
+	}
+}
+module key_system
+{
+	**depending on key
+	move_player - 
+		module movement_system.move(player, key) **wasd
+	use_hot - 
+		key_item module item_system.hot_key(player, key) ** 1-5
+	swing_item - 
+		module movement_system.swing_wielded_item(player) ** space
+	run - 
+		module movement_system.run(player) **shift
+	block -
+		module movement_system.block(player) **q
+
+
+}
+module movement_system
+{
+	move(player, key || false) - check boundaries and return new position
+	hot_key(player, key || false) - uses item if item is in hot_key_position
+	swing_wielded_item(player) returns hit_object || false
+	run(player) 
+	box_collision(obj1, obj2) returns true || false
+	circle_collision(obj1, obj2) returns true || false
+	block(player)
+
+}
+
+module inventory_system
+{
+	inventory_items
+
+	add(new_item) => inventory_items
+	delete(item)
+	gui.open(inventory, player)
+	arrange in order of inventory_items[]
+	tabs
+	{
+		gui.open(player_wielded_ui, player);
+		gui.open(skills_ui, player);
+		gui.open(magic_ui, player);
+		gui.open(crafting_ui, player);
+		gui.open(inventory_ui, player);
+	}
+}
+module crafting_system
+{
+	create_item
+	{
+		module item_system.check_price(item)
+		module inventory_system.delete(item)
+		module inventory_system.add(new_item)
+	}
+}
+module skill_system
+{
+	skills
+	{
+		xp
+		description
+		unlocks and milestones
+	}
+
+	add_xp(skill, xp)
+	level_up(skill, xp)
+
+
+
+}
+module fighting_system
+{
+	module movement_system.swing_wielded_item()
+
+
+}
+module talking_system
+{
+	gui.open(speech_box, speaker)
+
+}
+module shop_system
+{
+	gui.open(shop_items)
+}
+
+module item_system
+{
+	item
+	{
+		description
+		craft_ingredients
+		craft_ingredient_quantity
+
+		bonus_to
+		bonus_quantity
+
+
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,322 @@
+VI. Equipment (CRAFTING LVL REQ)
+	 {
+		wooden:
+			-wooden_shield
+			{
+				how_to_craft:
+				wood: 2
+
+				bonuses: +2 defence
+			}
+			-wooden_body
+			{
+				how_to_craft:
+				wood: 5
+
+				bonuses: +4 defence
+			}
+			-wooden_legging
+			{
+				how_to_craft:
+				wood: 4
+
+				bonuses: +3 defence
+			}
+			-wooden_arrows
+			{
+				how_to_craft:
+				wood: 1
+				feathers: 2
+
+				bonuses: + 1 archery
+			}
+			-wooden_club
+			{
+				how_to_craft:
+				wood: 1
+
+				bonuses: +2 strength
+			}
+			-wooden_spear
+			{
+				how_to_craft:
+					wood 1
+
+				bonuses: +2 attack
+			}
+			-wooden_hatchet
+			{
+				how_to_craft:
+				wood: 3
+
+				bonuses: +1 attack
+			}
+			-wooden_pickaxe
+			{
+				how_to_craft:
+				wood: 4
+
+				bonuses: +1 attack
+			}
+		iron:
+			-iron_sword
+			{
+				how_to_craft:
+					iron_bar:2
+					wood: 2
+
+					bonuses: + 6 attack
+			}
+			-iron_mace
+			{
+				how_to_craft:
+					iron_bar:3
+					wood: 2
+
+					bonuses: + 5 strength
+			}
+			-iron_shield
+			{
+				how_to_craft:
+					iron_bar:3
+
+					bonuses:  +6 defence
+			}
+			-iron_body
+			{
+				how_to_craft:
+					iron_bar:5
+
+					bonuses: +8 defence
+			}
+			-iron_leggings
+			{
+				how_to_craft:
+					iron_bar:4
+
+					bonuses: +7 defence
+			}
+			
+			-iron_hatchet
+			{
+				how_to_craft:
+					iron_bar: 3
+					wood: 2
+
+					bonuses: +3 attack
+			}
+			-iron_pickaxe
+			{
+				how_to_craft:
+					iron_bar:4
+					wood: 2
+
+					bonuses:  +3 attack
+			}
+			-iron_spear
+			{
+				iron_bar: 2
+				wood: 1
+
+				bonuses: +3 attack
+			}
+		steel:
+			-steel_sword
+			{
+				how_to_craft:
+					steel_bar: 2
+					wood:2
+
+					bonuses: +11 attack
+			}
+			-steel_mace
+			{
+				how_to_craft:
+					steel_bar:2
+					wood:2
+
+					bonuses: +11 strength
+			}
+			-steel_shield
+			{
+				how_to_craft:
+					steel_bar:3
+
+					bonuses: +12 defence
+			}
+			-steel_body
+			{
+				how_to_craft:
+					steel_bar:5
+
+					bonuses: +15 defence
+			}
+			-steel_leggings
+			{
+				how_to_craft:
+					steel_bar:4
+
+					bonuses: +14 defence
+			}
+			
+			-steel_hatchet
+			{
+				how_to_craft:
+					steel_bar:3
+					wood:2
+
+					bonuses: +7 attack
+			}
+			-steel_pickaxe
+			{
+				how_to_craft:
+					steel_bar:4
+					wood:2
+
+					bonuses: +7 attack
+			}
+			-steel_spear
+			{
+				steel_bar: 2
+				wood: 1
+				bonuses: +13 attack
+			}
+			-steel_knife
+			{
+				how_to_craft:
+					steel_bar:2
+					wood:1
+
+					bonuses: +9 attack
+			}
+		diamond:
+			-diamond_sword
+			{
+				how_to_craft:
+					diamond: 2
+					wood: 2
+
+					bonuses: + 20 attack
+			}
+			-diamond_mace
+			{
+				how_to_craft:
+					diamond:2
+					wood: 2
+
+					bonuses: +20 strength
+			}
+			-diamond_shield
+			{
+				how_to_craft:
+					diamond:3
+
+					bonuses: +21 defence
+			}
+			-diamond_body
+			{
+				how_to_craft:
+					diamond:5
+
+					bonuses: +23 defence
+			}
+			-diamond_leggings
+			{
+				how_to_craft:
+					diamond:4
+
+					bonuses: +22 defence
+			}
+			
+			-diamond_hatchet
+			{
+				how_to_craft:
+					diamond:3
+					wood:2
+
+					bonuses: +14 attack
+			}
+			-diamond_pickaxe
+			{
+				how_to_craft:
+					diamond:4
+					wood:2
+
+					bonuses: +14 attack
+			}
+			-diamond_spear
+			{
+				diamond: 2
+				wood: 1
+
+				bonuses: +22 attack
+			}
+		demonic:
+			-demonic_sword
+			{
+				how_to_craft:
+					demonic_bar: 4
+					wood: 2
+
+					bonuses: +31 attack
+			}
+			-demonic_mace
+			{
+				how_to_craft:
+					demonic_bar:4
+					wood: 2
+
+					bonuses: +32 strength
+			}
+			-demonic_shield
+			{
+				how_to_craft:
+					demonic_bar:6
+
+					bonuses: +33 defence
+			}
+			-demonic_body
+			{
+				how_to_craft:
+					demonic_bar:10
+
+					bonuses: +36 defence
+			}
+			-demonic_leggings
+			{
+				how_to_craft:
+					demonic_bar:8
+
+					bonuses: +34 defence
+			}
+			
+			-demonic_hatchet
+			{
+				how_to_craft:
+					demonic_bar:3
+					wood:2
+
+					bonuses: +22 attack
+			}
+			-demonic_pickaxe
+			{
+				how_to_craft:
+					demonic_bar:4
+					wood:2
+
+					bonuses: +22 attack
+			}
+			-demonic_spear
+			{
+				demonic_bar: 2
+				wood: 1
+
+				bonuses: +30 attack
+			}
+
+			crystal_katana
+			{
+				cannot craft you can find it only late in the game if you wear the tribal mask
+
+				+45 attack
+			}

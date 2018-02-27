@@ -1,0 +1,57 @@
+1. gameLoop
+	I.  fps
+	II. playing : true ? false 
+			dead -> gameover
+			beat the game -> continue / restart
+			paused -> start again or stop playing
+			{
+				needs centered ui box for pause menu
+				Resume / quit
+			}
+	III. setup screen width and height
+	IV. time_system
+	{
+		there will be 24 minutes in a game day
+		sun will start at 0 minutes
+		dim starts at 10 minutes
+		at 12 minutes its dark
+		sun starts at 20 minutes
+		fully lit by 24
+		reset to 0
+		count one day.
+	}
+
+	V. game_order
+	{
+		setup variables
+		{
+			initialize all enemies
+			initialize all objects
+			initialize player
+			initialize map
+			initialize map_objects
+		}
+		loop
+		{
+			spawn_map
+			spawn_map_resources
+			spawn_resource_byproducts
+
+			spawn_player
+			{
+				check_input ->take care of input
+				spawn_player minions
+
+				check_life
+			}
+			spawn_enemies
+			{
+				check_if within_draw_radius
+				check_if_close_to_player
+				if its close it will attack with whichever weapon when in range
+				else it will just walk its predefined path avoiding obstacles
+			}
+		}
+
+
+	}

@@ -1,0 +1,248 @@
+Crafting_Items (NO LVL REQ BUILDUP TO THESE)
+{
+	workbench
+	{
+		how_to_craft:
+			10 wood
+			5 iron
+
+
+	}
+	fire
+	{
+		how_to_craft
+			3 wood
+			1 fire_stone
+	}
+
+	-rock
+	{
+		pickup rocks or turn stone into rocks
+		how_to_craft
+			1 stone
+	}
+
+	** must be by workbench **
+	--------------------------
+	-bucket
+	{
+		how_to_craft: 
+			3 steel_bar
+
+		holds:
+			water
+			grape_juice
+			apple_juice
+			wine
+			beer
+			sand
+			lava
+		
+	}
+	-cloth
+	{
+		how_to_craft:
+			flax
+
+		pick up from drops
+
+	}
+	chest
+	{
+		how_to_craft:
+			any_type_logs 15
+
+		holds up to 30 items
+	}
+
+	big_chest
+	{
+		how_to_craft:
+			oak_logs+ 50
+
+		holds up to 100 items
+	}
+	magic_chest
+	{
+		how_to_craft:
+			magic_logs 500
+			20 diamonds
+			5 demonic bars
+
+		holds up to 100 items
+	}
+	demonic_chest
+	{
+		how_to_craft:
+			magic_logs 500
+			demonic_logs 500
+			20 diamonds
+			50 demonic bars
+
+		holds up to 1000 items
+	}
+	crystal chest
+	{
+		holds one stackable item and maxes stack
+		must find crystal katana then destroy chest with it to pick it up
+
+		holds up to 1000 items
+	}
+	-string
+	{
+		how_to_craft:
+			1 cloth
+				or
+			1 spider_silk
+	}
+	-bed
+	{
+		how_to_craft:
+			5 cloth
+			5 any_type_wood
+
+		sleep through the night in one player
+	}
+	-hammer
+	{
+		how_to_craft:
+			2 stone
+			2 birch_wood
+
+		Use on walls to upgrade,
+		needed to craft items
+	}
+	-knife
+	{
+		how_to_craft:
+			1 iron
+			2 any_type_wood
+	}
+
+	hoe
+	{	
+		2 any_type_wood
+		1 iron_bar
+		soften dirt to plant seeds
+	}
+
+
+
+	-furnace
+	{
+		how_to_craft:
+			20 stone
+			15 any_type_wood
+
+		needs wood or coal to keep lit
+		drops ash
+
+	}
+
+	-anvil
+	{
+		how_to_craft:
+			15 iron
+			5 steel_bar
+
+		Opens ability to craft iron equipment and up from home
+	}
+
+	-bomb
+	{
+		how_to_craft
+			gun_powder
+			4 steel_bar
+			string
+
+
+		timer once set
+	}
+
+	-gunpowder
+	{
+		coal
+		sulfur
+
+		or pick up from drops
+	}
+
+	work_bench_lvl_2
+	{
+
+		*must have crafting lvl 50
+
+		how_to_craft
+			50 iron_bars
+			50 steel_bars
+			10 diamonds
+			1 hammer
+
+	}
+
+	** must be by workbench lvl 2**
+	--------------------------
+
+	-metal_pipe
+	{
+		how_to_craft
+			2 steel_bar
+			 or
+			pick_up
+	}
+	-firing_pin
+	{
+		1 steel_bar
+	}
+	-flight_controller
+	{
+		pickup_from_drone
+
+		20 steel_bars
+		10 buckets of sand
+	}
+	-motor
+	{
+		pickup_from_drone
+
+		25 steel_bars
+		2 demonic_ore
+
+	}
+	-battery
+	{
+		pickup_from_drone
+
+		2 demonic_ore
+		2 diamonds
+	}
+	-speed_controller
+	{
+		pickup_from_drone
+
+		10 buckets_of_sand
+		20 steel_bars
+		2 demonic_ore
+		5 diamond_ore
+
+	}
+
+	-drone
+	{
+		build one and it will follow you and fight
+		{
+			shoots at nearest target inside radius
+			{
+				+50 archery
+				speed: very_fast
+				stun_ability
+				{
+					every 5 seconds can stop enemy for 3 seconds
+				}
+
+			}
+		}
+	}
+
+		
+}
