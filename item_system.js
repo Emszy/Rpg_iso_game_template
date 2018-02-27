@@ -48,7 +48,8 @@ items =
 
 	create : function()
 	{
-		var bow = this.init("bow", 0, 0, 50, 50, 0, this.skill.show_all, 1, "archery", 1, 5);
+		var bow = this.init("bow", 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, "archery", 1, 5);
+		console.log(bow.name);
 		return(bow);
 	},
 
@@ -97,7 +98,7 @@ items =
 		{
 			this.wieldable = true;
 		}
-
+		return (item);
 
 
 	}
