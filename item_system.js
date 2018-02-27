@@ -44,7 +44,7 @@ items =
 		this.skill.show_all();
 	},
 
-	init : function(name, id, use_func)
+	init : function(name, id, use_func, craft_lvl)
 	{
 		item = new Object();
 		item.name = name;
@@ -57,6 +57,20 @@ items =
 		item.weildable = false;
 		item.use_able = false;
 		item.use = use_func;
+		item.craft_lvl = craft_lvl;
+		item.craft = function(invent)
+		{
+			//find ingredients
+			//check if ingredients are in inventory
+			//if all ingredients are there, make item, delete ingredients from inventory or subtract
+			//if stackable, add item to inventory
+			return (invent);
+		}
+
+
+
+
+
 	}
 
 
