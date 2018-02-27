@@ -75,6 +75,27 @@ items =
 		item.craft_lvl = craft_lvl;
 		item.bonus = bonus;
 
+		item.show = function()
+		{
+			console.log(this.pos);
+			console.log(this.width);
+			console.log(this.height);
+			console.log(this.name);
+			console.log(this.health);
+			console.log(this.id);
+			console.log(this.placable);
+			console.log(this.placed);
+			console.log(this.dropped);
+			console.log(this.plantable);
+			console.log(this.planted);
+			console.log(this.wieldable);
+			console.log(this.use_able);
+			console.log(this.skill);
+			console.log(this.skill_lvl);
+			console.log(this.use);
+			console.log(this.craft_lvl);
+			console.log(this.bonus);
+		}
 		item.craft = function(invent)
 		{
 			//find ingredients
