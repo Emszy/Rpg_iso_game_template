@@ -37,20 +37,26 @@
 
 items = 
 {
-
+	all : [],
 	skill : skills.init(),
 	test : function()
 	{
 		this.skill.show_all();
-		bow = this.create();
-		bow.use();
+		this.create("bow", "archery");
+		this.create("sword", "fighting");
+
+		console.log(this.all["bow"].health);
+		// bow.use();
 	},
 
-	create : function()
+	create : function(name, skill_associated)
 	{
-		var bow = this.init("bow", 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, "archery", 1, 5);
-		console.log(bow.name);
-		return(bow);
+		var id = 0;
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0,function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].set_craft_cost(["one"], [1]);
+		this.all[name].show();
+		console.log(this.all);
+		
 	},
 
 	init : function(name, x, y, width, height, id, use_func, craft_lvl, skill_to_use, skill_lvl_to_use, bonus)
@@ -63,12 +69,16 @@ items =
 		item.health = 100;
 		item.id = id;
 		item.placable = false;
+		item.craft_cost = new Object();
+		item.craft_cost.items = [];
+		item.craft_cost.prices = [];
 		item.placed = false;
 		item.dropped = false;
 		item.plantable = false
 		item.planted = false;
 		item.wieldable = false;
 		item.use_able = false;
+		item.shootable = false;
 		item.skill = skill_to_use;
 		item.skill_lvl = skill_lvl_to_use;
 		item.use = use_func;
@@ -95,6 +105,7 @@ items =
 			console.log(this.use);
 			console.log(this.craft_lvl);
 			console.log(this.bonus);
+			console.log(this.craft_cost.items);
 		}
 		item.craft = function(invent)
 		{
@@ -105,6 +116,11 @@ items =
 			return (invent);
 		}
 
+		item.set_craft_cost = function(materials, prices)
+		{
+			item.craft_cost.items = materials;
+			item.craft_cost.prices = prices;
+		}
 		item.can_be_placed = function()
 		{
 			this.placable = true;
@@ -118,6 +134,11 @@ items =
 		item.can_be_wielded = function()
 		{
 			this.wieldable = true;
+		}
+
+		item.can_be_shot = function()
+		{
+			this.shootable = true;
 		}
 		return (item);
 
