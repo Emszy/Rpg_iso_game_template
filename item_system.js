@@ -36,31 +36,24 @@ items =
 	skill : skills.init(),
 	item_count : 0,
 
+	use : function()
+	{
+		console.log("testing");
+	},
+
 
 	test : function()
 	{
 		this.skill.show_all();
-		// all["bow"] = this.create_archery_weapon("bow", 32, 32, use, 1, "archery", 1);
-		this.create("sword", "fighting");
+		this.create_archery_weapon("bow", 32, 32, this.use, 1, "archery", 1);
 
-		this.all["sword"].use();
+		this.all["bow"].use();
+		console.log(this.all["bow"]);
 	},
-
-	create : function(name, skill_associated)
-	{
-		var id = 0;
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use, 1, skill_associated, 1, 5);
-		this.all[name].set_craft_cost(["one"], [1]);
-		this.all[name].show();
-
-		// console.log(this.all);
-		
-	},
-
 	create_archery_weapon : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
 		
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.all[name].can_be_wielded();
 		this.all[name].can_be_equipped();
 		this.all[name].can_be_shot();
@@ -68,50 +61,50 @@ items =
 
 	create_weapon : function(name, width, height, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.all[name].can_be_wielded();
 	},
 
 	create_armor : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.all[name].can_be_equipped();
 
 	},
 
 	create_building_block : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.all[name].can_be_placed(); 
 		
 	},
 
 	create_farming_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.can_be_planted();
 		this.can_be_placed();
 	},
 
 	create_fishing_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 
 	},
 
 	create_woodcutting_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 	},
 
 	create_mining_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 	},
 
 	create_food_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
 	{
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, skill_associated, 1, 5);
 		this.all[name].can_be_eaten();
 		this.all[name].can_be_planted();
 
@@ -190,6 +183,12 @@ items =
 			console.log(this.bonus);
 			console.log(this.craft_cost.items);
 		};
+
+		item.set_coordinates = function(pos)
+		{
+			this.x = pos.x;
+			this.y = pos.y;
+		}
 
 		item.copy = function()
 		{
@@ -273,9 +272,4 @@ items =
 
 }
 
-function use()
-	{
-
-		console.log("testing");
-	};
 
