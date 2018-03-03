@@ -1,4 +1,3 @@
-
 // all items have
 // ----------------
 // bonus_when_used
@@ -30,34 +29,117 @@
 // an item has a position and a size
 //
 
-
-
-
-
-
+	
 items = 
 {
 	all : [],
 	skill : skills.init(),
+	item_count : 0,
+
+
 	test : function()
 	{
 		this.skill.show_all();
-		this.create("bow", "archery");
+		// all["bow"] = this.create_archery_weapon("bow", 32, 32, use, 1, "archery", 1);
 		this.create("sword", "fighting");
 
-		console.log(this.all["bow"].health);
-		// bow.use();
+		this.all["sword"].use();
 	},
 
 	create : function(name, skill_associated)
 	{
 		var id = 0;
-		this.all[name] = this.init(name, 0, 0, 50, 50, 0,function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use, 1, skill_associated, 1, 5);
 		this.all[name].set_craft_cost(["one"], [1]);
 		this.all[name].show();
-		console.log(this.all);
+
+		// console.log(this.all);
 		
 	},
+
+	create_archery_weapon : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_wielded();
+		this.all[name].can_be_equipped();
+		this.all[name].can_be_shot();
+	},
+
+	create_weapon : function(name, width, height, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_wielded();
+	},
+
+	create_armor : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_equipped();
+
+	},
+
+	create_building_block : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_placed(); 
+		
+	},
+
+	create_farming_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.can_be_planted();
+		this.can_be_placed();
+	},
+
+	create_fishing_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+
+	},
+
+	create_woodcutting_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+	},
+
+	create_mining_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+	},
+
+	create_food_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_eaten();
+		this.all[name].can_be_planted();
+
+	},
+
+	create_magic_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_wielded();
+		this.all[name].can_be_equipped();
+	},
+
+	create_non_craftables : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_planted();
+
+	},
+
+	create_potion : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	{
+		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, skill_associated, 1, 5);
+		this.all[name].can_be_wielded();
+		this.all[name].can_be_eaten();
+	},
+
+
 
 	init : function(name, x, y, width, height, id, use_func, craft_lvl, skill_to_use, skill_lvl_to_use, bonus)
 	{
@@ -67,18 +149,20 @@ items =
 		item.height = height;
 		item.name = name;
 		item.health = 100;
-		item.id = id;
+		item.id = this.item_count;
+		item.edible = false;
 		item.placable = false;
 		item.craft_cost = new Object();
 		item.craft_cost.items = [];
 		item.craft_cost.prices = [];
 		item.placed = false;
+		item.stackable = false;
 		item.dropped = false;
 		item.plantable = false
 		item.planted = false;
 		item.wieldable = false;
-		item.use_able = false;
 		item.shootable = false;
+		item.equippable = false;
 		item.skill = skill_to_use;
 		item.skill_lvl = skill_lvl_to_use;
 		item.use = use_func;
@@ -99,14 +183,44 @@ items =
 			console.log(this.plantable);
 			console.log(this.planted);
 			console.log(this.wieldable);
-			console.log(this.use_able);
 			console.log(this.skill);
 			console.log(this.skill_lvl);
-			console.log(this.use);
+			this.use();
 			console.log(this.craft_lvl);
 			console.log(this.bonus);
 			console.log(this.craft_cost.items);
-		}
+		};
+
+		item.copy = function()
+		{
+			copy = new Object();
+			copy.pos = vector2d(this.x, this.y);
+			copy.width = this.width;
+			copy.height = this.height;
+			copy.name = this.name;
+			copy.health = this.health;
+			copy.id = this.this.copy_count;
+			copy.edible = this.edible;
+			copy.placable = this.placeable;
+			copy.craft_cost = new Object();
+			copy.craft_cost.items = this.craft_cost.items;
+			copy.craft_cost.prices = this.craft_cost.prices;
+			copy.placed = this.placed;
+			copy.stackable = this.stackable;
+			copy.dropped = this.dropped;
+			copy.plantable =this.plantable;
+			copy.planted = this.planted;
+			copy.wieldable = this.wieldable;
+			copy.shootable = this.shootable;
+			copy.equippable = this.equippable;
+			copy.skill = this.skill;
+			copy.skill_lvl = this.skill_lvl;
+			copy.use = this.use;
+			copy.craft_lvl = this.craft_lvl;
+			copy.bonus = this.bonus;
+			return (copy);
+		};
+
 		item.craft = function(invent)
 		{
 			//find ingredients
@@ -114,32 +228,43 @@ items =
 			//if all ingredients are there, make item, delete ingredients from inventory or subtract
 			//if stackable, add item to inventory
 			return (invent);
-		}
+		};
 
 		item.set_craft_cost = function(materials, prices)
 		{
 			item.craft_cost.items = materials;
 			item.craft_cost.prices = prices;
-		}
+		};
+
+		item.can_be_eaten = function()
+		{
+			this.edible = true;
+		};
 		item.can_be_placed = function()
 		{
 			this.placable = true;
-		}
+		};
 
 		item.can_be_planted = function()
 		{
 			this.plantable = true;
-		}
+		};
 
 		item.can_be_wielded = function()
 		{
 			this.wieldable = true;
-		}
+		};
+		item.can_be_equipped = function()
+		{
+			this.equippable = true;
+		};
 
 		item.can_be_shot = function()
 		{
 			this.shootable = true;
-		}
+		};
+
+		this.item_count++;
 		return (item);
 
 
@@ -147,4 +272,10 @@ items =
 
 
 }
+
+function use()
+	{
+
+		console.log("testing");
+	};
 
