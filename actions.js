@@ -5,7 +5,7 @@ action =
 	{
 
 
-
+	//person is just a global dummy
 		// dummy1.hot_keys[0].use_item();
 		// dummy1.hot_keys[1].use_item();
 		// dummy1.hot_keys[2].use_item();
@@ -14,16 +14,15 @@ action =
 		// console.log(dummy1.path);
 		// console.log(dummy1.path[dummy1.walk_index].x);
 		// console.log(dummy1.looking_direction);
+		// dummy1.hot_keys = this.use_hot_key(1, dummy1.hot_keys);
+		// dummy1.hot_keys = this.use_hot_key(2, dummy1.hot_keys);
+		// person = action.run(dummy1);
+		// person = action.stop_run(dummy1);
 
-		
-		dummy1.hot_keys = this.use_hot_key(1, dummy1.hot_keys);
-		dummy1.hot_keys = this.use_hot_key(2, dummy1.hot_keys);
-		person = action.run(dummy1);
-		person = action.stop_run(dummy1);
-
-		dummy1 = this.follow_path(dummy1, dummy1.path);
-		action.swing_weapon(dummy1);
-		action.block(dummy1);
+		// dummy1 = this.follow_path(dummy1, dummy1.path);
+		// console.log(dummy1.pos, tile_map.pos);
+		// action.swing_weapon(dummy1, vector2d(screen.width / 2, screen.height / 2));
+		// action.block(dummy1, vector2d(screen.width / 2, screen.height / 2));
 
 
 		return (dummy1);
@@ -32,35 +31,53 @@ action =
 
 	move_up : function(person, velocity)
 	{
-		person.pos.y -= velocity * person.run;
-		person.looking_direction.y = -1;
+		person.pos.y += velocity * person.run;
+		person.pos.x += velocity * person.run;
+	
+
+		person.looking_direction.y = 1;
+		person.looking_direction.x = 1;
 		return (person);
 	},
 
 	move_down : function(person, velocity)
 	{
-		person.pos.y += velocity * person.run;
-		person.looking_direction.y = 1;
+		person.pos.x -= velocity * person.run;
+		person.pos.y -= velocity * person.run;
+
+		person.looking_direction.y = -1;
+		person.looking_direction.x = -1;
+
+
 		return (person);
 	},
 
 	move_left : function(person, velocity)
 	{
 		person.pos.x -= velocity * person.run;
+		person.pos.y += velocity * person.run;
+
 		person.looking_direction.x = -1;
+		person.looking_direction.y = 1;
+
+
 		return (person);
 	},
 
 	move_right : function(person, velocity)
 	{
 		person.pos.x += velocity * person.run;
+		person.pos.y -= velocity * person.run;
+
 		person.looking_direction.x = 1;
+		person.looking_direction.y = -1;
+// 
 		return (person);
 	},
 
 	run : function(person)
 	{
-		person.run = 3;
+		person.run = 2;
 		return (person);
 	},
 
@@ -90,18 +107,26 @@ action =
 		if (person.pos.x < person.path[person.walk_index].x) 
 		{
 			person = this.move_right(person, person.velocity);
+			tile_map = this.move_left(tile_map, person.velocity);
+
 		}
 		if (person.pos.x > person.path[person.walk_index].x) 
 		{
 			person = this.move_left(person, person.velocity);
+			tile_map = this.move_right(tile_map, person.velocity);
+
 		}
 		if (person.pos.y < person.path[person.walk_index].y) 
 		{
 			person = this.move_down(person, person.velocity);
+			tile_map = this.move_up(tile_map, person.velocity);
+
 		}
 		if (person.pos.y > person.path[person.walk_index].y) 
 		{
 			person = this.move_up(person, person.velocity);
+			tile_map = this.move_down(tile_map, person.velocity);
+
 		}
 		//check to set next waypoint
 
@@ -114,9 +139,9 @@ action =
 		return (person);
 	},
 
-	swing_weapon : function(person)
+	swing_weapon : function(person, pos)
 	{	
-		var center = vector2d((person.pos.x + person.width / 2) - (person.weapon.width / 2), (person.pos.y + person.height / 2) - (person.weapon.height / 2));
+		var center = vector2d((pos.x + person.width / 2) - (person.weapon.width / 2), (pos.y + person.height / 2) - (person.weapon.height / 2));
 		var weapon_pos = vector2d(center.x, center.y);
 		var x_range = (person.looking_direction.x * person.weapon.range);
 		var y_range = (person.looking_direction.y * person.weapon.range);
@@ -150,9 +175,9 @@ action =
 		return (weapon_pos);
 	},
 
-	block : function (person)
+	block : function (person, pos)
 	{
-		var center = vector2d((person.pos.x + person.width / 2) - (person.shield.width / 2), (person.pos.y + person.height / 2) - (person.shield.height / 2));
+		var center = vector2d((pos.x + person.width / 2) - (person.shield.width / 2), (pos.y + person.height / 2) - (person.shield.height / 2));
 		var x_range = (person.looking_direction.x * person.shield.range);
 		var y_range = (person.looking_direction.y * person.shield.range);
 		var shield_pos = vector2d(center.x + x_range, 
@@ -201,6 +226,7 @@ action =
 	{
 		// fixed width for obj2, obj2 has no .pos in this function. its to account
 		// fluctuation in speed to register waypoints.
+
 		return !(
         ((obj1.pos.y + obj1.height) < (obj2.y)) ||
         (obj1.pos.y > (obj2.y + 8)) ||

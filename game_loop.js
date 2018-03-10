@@ -1,18 +1,37 @@
-
 var screen =
 {
 	canvas : "",
 	ctx : "",
 	width : 0,
-	height :0,
+	height : 0,
+	iso_pos : vector2d(0, 0),
 
 	set_canvas : function(canvas_id)
 	{
 		this.canvas = document.getElementById(canvas_id);
 		this.width = this.canvas.width;
 		this.height = this.canvas.height;
+		this.iso_pos = vector2d(screen.width / 2,screen.height / 2)
+
 		this.ctx = this.canvas.getContext("2d");
 	},
+
+	show : function()
+	{
+		console.log(this.width, this.height);
+	},
+
+
+	iso_translate : function(x, y)
+	{
+		screen.ctx.translate(this.iso_pos.x, this.iso_pos.y);
+	},
+
+	reset_translate : function()
+	{
+		screen.ctx.setTransform(1,0,0,1,0,0);
+	}
+
 }
 
 var game_master5000 = 
@@ -30,31 +49,16 @@ var game_master5000 =
 		this.interval = 1000 / fps;
 	},
 
-
-	init_test : function()
-	{
-		test.print();
-		test.one = "init_one";
-		test.two = "Init_two";
-		test.three = "Init_three";
-		test.arr.push("this", "that", 1, 49);
-		test.num = 40392;
-		test.print();
-
-		tile_map.test();
-
-	},
-
-	update_test : function()
-	{
-		tile_map.draw();
-	},
-
 	initialize_game_loop : function(fps, canvas_id)
 	{
 		this.set_fps(fps);
 		this.interval = 1000 / fps;
 		screen.set_canvas(canvas_id);
+	},
+
+		update_test : function()
+	{
+		tile_map.draw_iso();
 	},
 
 	initialize_game : function()
@@ -63,23 +67,26 @@ var game_master5000 =
 		
 
 		//put all initialize data here ex: players, objects, enemies, map, etc
-		// this.init_test();
+		tile_map.test();
+
 		// inventory.test();
 		// skills.test();
-		items.test();
+		// items.test();
 		
 	},
-
-	game_update : function(x)
+	game_update : function()
 	{
 		//runs in loop, this is where you put all the game
 		// ex: enemy.move, player.move, render_map etc
-		
-		// this.update_test();
 
-		// draw_generic(dummy.pos, dummy.width, dummy.height, "red");
-		// dummy = action.test(dummy);
+		screen.iso_translate();
+		this.update_test();
+		draw_tile(0, 0, dummy.color);
 
+		screen.reset_translate();
+
+		dummy = action.test(dummy);
+		// action.box_collision(dummy ,mouse);
 
 	},
 
@@ -92,8 +99,11 @@ var game_master5000 =
 		if (this.delta > this.interval)
     	{
     		this.then = this.now - (this.delta % this.interval);
+    		
+
     		screen.ctx.clearRect(0, 0, screen.width, screen.height);
-    		this.game_update()
+
+			this.game_update()
 	
     	}
 
@@ -110,7 +120,7 @@ function loop()
 
 var dummy = test.dummy();
 
-// dummy.set_path();
+dummy.set_path();
 game_master5000.initialize_game();
 loop();
 

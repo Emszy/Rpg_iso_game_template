@@ -1,7 +1,12 @@
 Archery:
 	**indicates must be by workbench lvl 2
 
-
+			-quiver
+			{
+				5 cloth
+				
+				holds arrows, else they stack in inventory
+			}
 			-birch_arrow_shaft
 			{
 				birch_log:5

@@ -52,7 +52,8 @@ var test =
 	dummy : function()
 	{
 		dummy1 = new Object();
-		dummy1.pos = vector2d(500,500);
+		dummy1.pos = vector2d(0,0);
+		dummy1.iso_pos = vector2d(0,0);
 		dummy1.width = 32;
 		dummy1.height = 32;
 		dummy1.velocity = 1;
@@ -60,11 +61,12 @@ var test =
 		dummy1.path = [];
 		dummy1.looking_direction = vector2d(0,0);
 		dummy1.walk_index = 0;
+		dummy1.color="cyan";
 		dummy1.set_path = function()
 		{
 			for (var x = 0; x < random_int(6, 9); x ++)
 			{
-				this.path.push(vector2d(random_int(50, 300), random_int(50,300)));
+				this.path.push(vector2d(random_int(200, 300), random_int(200,300)));
 			}
 		};
 		dummy1.hot_keys = [this.item("one"), this.item("two"), this.item("three"), this.item("four"), this.item("five")];

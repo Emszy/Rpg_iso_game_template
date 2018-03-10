@@ -8,11 +8,6 @@ function random_float(min, max)
     return Math.random() * (max - min) + min;
 }
 
-function vector2d(x,y)
-{
-	return pos = {x: x, y:y};
-}
-
 function make_image(img_src)
 {
 	image = new Image();
@@ -27,7 +22,7 @@ function draw_generic(pos, width, height, color)
 	screen.ctx.fill();
 }
 
-function drawRotatedRect(x,y,width,height,degrees){
+function drawRotatedRect(x,y,width,height,degrees, color){
 
         // first save the untranslated/unrotated context
         screen.ctx.save();
@@ -43,7 +38,7 @@ function drawRotatedRect(x,y,width,height,degrees){
         //       so the rect needs to be offset accordingly when drawn
         screen.ctx.rect( -width/2, -height/2, width,height);
 
-        screen.ctx.fillStyle="gold";
+        screen.ctx.fillStyle=color;
         screen.ctx.fill();
 
         // restore the context to its untranslated/unrotated state
