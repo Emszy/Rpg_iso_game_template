@@ -31,8 +31,8 @@ action =
 
 	move_up : function(person, velocity)
 	{
-		person.pos.y += velocity * person.run;
-		person.pos.x += velocity * person.run;
+		person.pos.y += velocity + person.run;
+		person.pos.x += velocity + person.run;
 	
 
 		person.looking_direction.y = 1;
@@ -42,8 +42,8 @@ action =
 
 	move_down : function(person, velocity)
 	{
-		person.pos.x -= velocity * person.run;
-		person.pos.y -= velocity * person.run;
+		person.pos.x -= velocity + person.run;
+		person.pos.y -= velocity + person.run;
 
 		person.looking_direction.y = -1;
 		person.looking_direction.x = -1;
@@ -54,8 +54,8 @@ action =
 
 	move_left : function(person, velocity)
 	{
-		person.pos.x -= velocity * person.run;
-		person.pos.y += velocity * person.run;
+		person.pos.x -= velocity + person.run;
+		person.pos.y += velocity + person.run;
 
 		person.looking_direction.x = -1;
 		person.looking_direction.y = 1;
@@ -66,8 +66,8 @@ action =
 
 	move_right : function(person, velocity)
 	{
-		person.pos.x += velocity * person.run;
-		person.pos.y -= velocity * person.run;
+		person.pos.x += velocity + person.run;
+		person.pos.y -= velocity + person.run;
 
 		person.looking_direction.x = 1;
 		person.looking_direction.y = -1;
@@ -77,7 +77,7 @@ action =
 
 	run : function(person)
 	{
-		person.run = 2;
+		person.velocity == 5 ? person.velocity = 1 : person.velocity = 5;
 		return (person);
 	},
 
@@ -89,7 +89,6 @@ action =
 
 	use_hot_key : function(key, array_of_items)
 	{
-
 		//specifically for key 1-9 implementations
 		if (array_of_items[key - 1] != "none")
 		{
@@ -129,7 +128,6 @@ action =
 
 		}
 		//check to set next waypoint
-
 		if (this.path_switch_collision(person, path[person.walk_index])) 
 		{
 			person.walk_index++;

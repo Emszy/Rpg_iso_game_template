@@ -86,5 +86,10 @@ window.onkeydown = function (e) {
       tile_map = action.move_up(tile_map, dummy.velocity);
 
    }
-   // console.log("dummy", dummy.pos,"map", tile_map.pos);
+
+   if (e.keyCode == 16)
+   {
+      dummy = action.run(dummy);
+   }
+   console.log(e.keyCode);
 };

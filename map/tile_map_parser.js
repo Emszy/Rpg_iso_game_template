@@ -99,11 +99,11 @@ var tile_map =
 	{
 		//restraint is how many tiles away should be the start/end for x,y iteration.
 
-		restraint = 5 * character.velocity * character.run;
+		restraint = Math.round(5);
 		var map_area = new Object();
 
-		map_area.start = vector2d(character.pos.x - restraint, character.pos.y - restraint);
-		map_area.end = vector2d(character.pos.x + restraint, character.pos.y + restraint)
+		map_area.start = vector2d(Math.round(character.pos.x - restraint), Math.round(character.pos.y - restraint));
+		map_area.end = vector2d(Math.round(character.pos.x + restraint), Math.round(character.pos.y + restraint))
 		return (map_area);
 
 	},
