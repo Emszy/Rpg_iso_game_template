@@ -99,7 +99,7 @@ var tile_map =
 	{
 		//restraint is how many tiles away should be the start/end for x,y iteration.
 
-		restraint = Math.round(5);
+		restraint = 20;
 		var map_area = new Object();
 
 		map_area.start = vector2d(Math.round(character.pos.x - restraint), Math.round(character.pos.y - restraint));
@@ -135,14 +135,11 @@ var tile_map =
 		}
 	},
 
-	draw_iso : function()
+	draw_iso : function(dummy)
 	{
 
 		var map_area = this.draw_restraint(dummy);
-		// console.log(pos);
-		// console.log(map_area.start, map_area.end);
-
-
+		
 		for (var x = map_area.start.x; x <= map_area.end.x; x++)
 		{
 			for (var y = map_area.start.y; y <= map_area.end.y; y++)

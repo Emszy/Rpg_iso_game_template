@@ -38,16 +38,28 @@ var mouse =
 
 canvas.onmousedown = function (e) {
 
-   mouse.iso_pt(e, dummy.pos);
+   mouse.iso_pt(e, player.pos);
    var tst = test.dummy();
 
-   tst.pos = isometric.get_2d_tile_coordinate(dummy.pos.x, dummy.pos.y);
+   tst.pos = isometric.get_2d_tile_coordinate(player.pos.x, player.pos.y);
    if (action.box_collision(tst, mouse.iso) == true)
    {
-      dummy.color == "red" ? dummy.color = "cyan" : dummy.color = "red";
+      player.color == "red" ? player.color = "cyan" : player.color = "red";
    }
 
    console.log("dummy", tst.pos, "mouse", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
+};
+
+window.onkeyup = function (e)
+{
+   player.keys[e.keyCode] = false;
+}
+
+window.onkeydown = function (e)
+{
+   console.log(e.keyCode);
+   player.keys[e.keyCode] = true;
+
 };
 
 function make_tile()
@@ -59,37 +71,4 @@ function make_tile()
    });
 };
 
-window.onkeydown = function (e) {
 
-
-   if (e.keyCode == 65)
-   {
-      dummy = action.move_left(dummy, dummy.velocity);
-      tile_map = action.move_right(tile_map, dummy.velocity);
-
-   }
-   if (e.keyCode == 68)
-   {
-      dummy = action.move_right(dummy, dummy.velocity);
-      tile_map = action.move_left(tile_map, dummy.velocity);
-
-   }
-   if (e.keyCode == 83)
-   {
-     dummy =  action.move_up(dummy, dummy.velocity);
-      tile_map = action.move_down(tile_map, dummy.velocity);
-
-   }
-   if (e.keyCode == 87)
-   {
-      dummy = action.move_down(dummy, dummy.velocity);
-      tile_map = action.move_up(tile_map, dummy.velocity);
-
-   }
-
-   if (e.keyCode == 16)
-   {
-      dummy = action.run(dummy);
-   }
-   console.log(e.keyCode);
-};

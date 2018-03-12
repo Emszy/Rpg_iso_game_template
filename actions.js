@@ -1,9 +1,8 @@
 action = 
 {
 
-	test : function(dummy1)
+	test : function(dummy)
 	{
-
 
 	//person is just a global dummy
 		// dummy1.hot_keys[0].use_item();
@@ -19,22 +18,67 @@ action =
 		// person = action.run(dummy1);
 		// person = action.stop_run(dummy1);
 
-		// dummy1 = this.follow_path(dummy1, dummy1.path);
+			dummy = action.check_keys(dummy);
+			dummy = action.gravity(dummy);
+			// dummy1 = this.follow_path(dummy1, dummy1.path);
 		// console.log(dummy1.pos, tile_map.pos);
 		// action.swing_weapon(dummy1, vector2d(screen.width / 2, screen.height / 2));
 		// action.block(dummy1, vector2d(screen.width / 2, screen.height / 2));
 
 
-		return (dummy1);
+		return (dummy);
 
+	},
+
+	check_keys : function(person)
+	{
+		var left = 65;
+  	 	var right = 68;
+  	 	var up = 83;
+   		var down = 87;
+   		var run = 16;
+   		var jump = 32;
+
+   		if (person.keys[left] == true)
+   		{
+      		person = action.move_left(person, person.velocity);
+      		tile_map = action.move_right(tile_map, person.velocity);
+   		}
+   		if (person.keys[right] == true)
+   		{
+      		person = action.move_right(person, person.velocity);
+      		tile_map = action.move_left(tile_map, person.velocity);
+   		}
+   		if (person.keys[up] == true)
+   		{
+     		person =  action.move_up(person, person.velocity);
+   		   	tile_map = action.move_down(tile_map, person.velocity);
+   		}
+   		if (person.keys[down] == true)
+   		{
+   		   person = action.move_down(person, person.velocity);
+   		   tile_map = action.move_up(tile_map, person.velocity);
+   		}
+   		if (person.keys[run] == true)
+   		{
+   		   person = action.run(person);
+		}
+		if (person.keys[jump] == true)
+   		{
+   			person = action.jump(person);
+		}
+		else if (person.keys[jump] == false && person.pos.z > 0)
+		{
+			person.decend = true;
+		}
+		return (person);
 	},
 
 	move_up : function(person, velocity)
 	{
-		person.pos.y += velocity + person.run;
-		person.pos.x += velocity + person.run;
+		person.pos.y += velocity;
+		person.pos.x += velocity;
 	
-
 		person.looking_direction.y = 1;
 		person.looking_direction.x = 1;
 		return (person);
@@ -42,8 +86,8 @@ action =
 
 	move_down : function(person, velocity)
 	{
-		person.pos.x -= velocity + person.run;
-		person.pos.y -= velocity + person.run;
+		person.pos.x -= velocity;
+		person.pos.y -= velocity;
 
 		person.looking_direction.y = -1;
 		person.looking_direction.x = -1;
@@ -54,8 +98,8 @@ action =
 
 	move_left : function(person, velocity)
 	{
-		person.pos.x -= velocity + person.run;
-		person.pos.y += velocity + person.run;
+		person.pos.x -= velocity;
+		person.pos.y += velocity;
 
 		person.looking_direction.x = -1;
 		person.looking_direction.y = 1;
@@ -66,8 +110,8 @@ action =
 
 	move_right : function(person, velocity)
 	{
-		person.pos.x += velocity + person.run;
-		person.pos.y -= velocity + person.run;
+		person.pos.x += velocity;
+		person.pos.y -= velocity;
 
 		person.looking_direction.x = 1;
 		person.looking_direction.y = -1;
@@ -77,13 +121,32 @@ action =
 
 	run : function(person)
 	{
-		person.velocity == 5 ? person.velocity = 1 : person.velocity = 5;
+		person.velocity == 2 ? person.velocity = 0.5 : person.velocity = 2;
 		return (person);
 	},
 
 	stop_run : function(person)
 	{
 		person.run = 1;
+		return (person);
+	},
+
+
+	jump : function(person)
+	{
+		if (person.pos.z >= person.max_jump) person.descend = true
+   		if (person.pos.z <= 0) person.descend = false;
+
+   		if (person.descend == false) person.pos.z += 0.5;
+   		if (person.descend == true) person.pos.z -= 0.4;
+		return (person);
+	},
+
+	gravity : function(person)
+	{
+		if (person.keys[32] == false && person.pos.z > 0) person.descend = true
+		if (person.descend == true && person.pos.z > 0) person.pos.z -= 0.4;
+		if (person.pos.z < 0) person.pos.z = 0;
 		return (person);
 	},
 

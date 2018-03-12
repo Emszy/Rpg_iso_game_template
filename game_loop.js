@@ -56,9 +56,25 @@ var game_master5000 =
 		screen.set_canvas(canvas_id);
 	},
 
-		update_test : function()
+	update_test : function()
 	{
-		tile_map.draw_iso();
+		tile_map.draw_iso(player);
+
+		tile_map.change_width(16);
+		tile_map.change_height(8);
+
+		if (player.pos.x >= 0 && player.pos.y >= 0 && player.pos.x < tile_map.map.length - 1 && player.pos.y < tile_map.map[0].length - 1)
+		{
+			draw_pos = tile_map.map[Math.round(player.pos.x)][Math.round(player.pos.y)].z - player.pos.z;
+		}
+		else
+		{
+			draw_pos = 0 - player.pos.z;
+		}
+		draw_tile(draw_pos, draw_pos, player.color);
+		tile_map.change_width(32 * 3);
+		tile_map.change_height(16 * 3);
+
 	},
 
 	initialize_game : function()
@@ -81,11 +97,10 @@ var game_master5000 =
 
 		screen.iso_translate();
 		this.update_test();
-		draw_tile(0, 0, dummy.color);
 
 		screen.reset_translate();
 
-		dummy = action.test(dummy);
+		player = action.test(player);
 		// action.box_collision(dummy ,mouse);
 
 	},
@@ -118,9 +133,9 @@ function loop()
     game_master5000.loop();
 }
 
-var dummy = test.dummy();
+var player = test.dummy();
 
-dummy.set_path();
+player.set_path();
 game_master5000.initialize_game();
 loop();
 

@@ -52,11 +52,14 @@ var test =
 	dummy : function()
 	{
 		dummy1 = new Object();
-		dummy1.pos = vector2d(0,0);
-		dummy1.iso_pos = vector2d(0,0);
-		dummy1.width = 32;
-		dummy1.height = 32;
-		dummy1.velocity = 1;
+		dummy1.pos = vector3d(0,0,0);
+		dummy1.iso_pos = vector3d(0,0,0);
+		dummy1.width = 16;
+		dummy1.height = 16;
+		dummy1.max_jump = 5;
+		dummy1.descend = false;
+		dummy1.keys = new Array(200).fill(false);
+		dummy1.velocity = 0.05;
 		dummy1.run = 1;
 		dummy1.path = [];
 		dummy1.looking_direction = vector2d(0,0);
@@ -74,7 +77,7 @@ var test =
 		dummy1.shield = this.weapon("shield", 20, 20, 20);
 		dummy1.inventory = inventory.init();
 		return(dummy1);
-
 	},
+
 
 };
