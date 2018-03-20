@@ -1,40 +1,47 @@
+
 skills = 
 {
-	test : function()
+	test : function(skill)
 	{
-		var skill = this.init();
-		skill.health.display();
-		skill.health.add_xp(10);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_xp(100);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_xp(1000);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_xp(10000);
-		skill.health.add_lvl();
-		skill.health.display();
+		// skill.health.display();
+		// skill.health.add_xp(10);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_xp(100);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_xp(1000);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_xp(10000);
+		// skill.health.add_lvl();
+		// skill.health.display();
 
-		skill.health.add_xp(100000);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_xp(1000000);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_xp(10000000);
-		skill.health.add_lvl();
-		skill.health.display();
-		skill.health.add_current(20);
-		skill.health.subtract_current(38);
-		skill.health.current_reset();
+		// skill.health.add_xp(100000);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_xp(1000000);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_xp(10000000);
+		// skill.health.add_lvl();
+		// skill.health.display();
+		// skill.health.add_current(20);
+		// skill.health.subtract_current(38);
+		// skill.health.current_reset();
+		// console.log(skill.health.access(22));
+		// console.log(skill.attack.access(22));
 
+	//agility run stamina
+		// skill.agility.count_down();
+		// if (skill.agility.timer_done())
+		// {
+		// 	skill.agility.subtract_current(1);
+		// 	skill.agility.timer_reset();
+		// }  
+		// skill.agility.display();
 
-		console.log(skill.health.access(22));
-		console.log(skill.attack.access(22));
-
-		skill.health.display();
+		return (skill);
 	},
 
 	skill : function(name)
@@ -43,7 +50,9 @@ skills =
 		skil.name = name;
 		skil.xp = 0;
 		skil.lvl = 1;
-		skil.current = 1;
+		skil.current = 4;
+		skil.timer = 50;
+		skil.max_timer = 50;
 
 		skil.add_xp = function(xp)
 		{
@@ -69,7 +78,6 @@ skills =
 			{
 				this.current = this.lvl + 12;
 			}
-			
 		};
 
 		skil.subtract_current = function(boost)
@@ -86,18 +94,39 @@ skills =
 
 		skil.current_reset = function()
 		{
-			this.current = this.lvl;		}
+			this.current = this.lvl;
+		};
+
+		skil.count_down = function()
+		{
+			this.timer -= 1;
+		};
+
+		skil.timer_reset = function()
+		{
+			this.timer = this.max_timer;
+		};
+
+		skil.timer_done = function()
+		{
+			if (this.timer <= 0) return (true);
+			else return (false);
+		};
 
 		skil.display = function()
 		{
-			console.log("\n" + this.name + ":\n","xp" + this.xp + "\n", "lvl" + this.lvl + "\n", "current" + this.current + "\n")
-		}
+			console.log("\n" + this.name + ":\n",
+						"xp" + this.xp + "\n",
+						"lvl" + this.lvl + "\n",
+						"current" + this.current + "\n",
+						"timer" + this.timer + "\n");
+		};
 
 		skil.access = function(lvl)
 		{
 			if (this.lvl >= lvl) return(true);
 			return (false);
-		}
+		};
 
 		return(skil);
 	},

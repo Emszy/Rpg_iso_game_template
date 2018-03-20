@@ -4,132 +4,149 @@ map
 
 	I. Spawn / lake
 	{
-		guide
-		friend/craftsman
-		coal_worker
-
-		rat
-		chicken
-		man
+		npc:
+			guide
+			friend
+			craftsman
+			coal_worker
+	
+		enemies:
+			rat
+			chicken
+			man
 	}
 
 	II. forest
 	{
-		wood_cutter
-		kid
-		friendly_archer
-
-		rat
-		man
-		goblin
-		monkey
-		warthog
-		batswarm
+		npc:
+			wood_cutter
+			kid
+			friendly_archer
+	
+		enemies:
+			rat
+			man
+			goblin
+			monkey
+			warthog
+			batswarm
 	}
 
 	III. Volcano
 	{
-		BlackSmith
-
-
-		knight
-		scorpion
-		witch
-		giant
-
-
+		npc:
+			BlackSmith
+	
+		enemies:
+			knight
+			scorpion
+			witch
+			giant
 	}
 
 	IV. Town/safezone
 	{
-		shop_keeper
-		weapons_dealer
-		Doctor
-		Shaman
-		Master_mage
-		chickens
-		town_gaurd
+		npc:
+			shop_keeper
+			weapons_dealer
+			Doctor
+			Shaman
+			
+		enemies:
+			Master_mage
+			chickens
+			town_gaurd
 	}
 
 	V.Beach
 	{
-		lighthouse_keeper
-		light_house_keepers_daughter
-
-
-		suicide_bomber
-		bandit
-		skeleton
-		x_bow_tower
-		archer
-
-
+		npc:
+			lighthouse_keeper
+			light_house_keepers_daughter
+	
+		enemies:
+			suicide_bomber
+			bandit
+			skeleton
+			x_bow_tower
+			archer
 	}
 
 	VI. Island
 	{
-		natives
-		tribesman
-		Island_shop_keeper
-		Island_Weapons_dealer
-		chickens
-		giant_spider
-		mage
-		gypsy
-		drone
+		npc:
+			natives
+			tribesman
+			Island_shop_keeper
+			Island_Weapons_dealer
+			
+		enemies:
+	
+			chickens
+			giant_spider
+			mage
+			gypsy
+			drone
 
 
 	}
 
 	VII. Kingdom
 	{
-		hero
-		king
-		queen
-		jester
-
-		princess
-		soldier
-		assassin
-		musketeer
-		town_gaurd
-		catapult
+		npc:
+			hero
+			king
+			queen
+			jester
+		enemies:
+	
+			princess
+			soldier
+			assassin
+			musketeer
+			town_gaurd
+			catapult
 	}
 
 	VIII. Desert
 	{
-		nomad
-		sire
-		pasture
-
-		demon
-		gargoyle
-		tranquilizing_hunter
-
+		npc:
+			nomad
+			sire
+			pasture
+	
+		enemies:
+			demon
+			gargoyle
+			tranquilizing_hunter
+	
 	}
 
 	IX. Caverns
 	{
-		trickster
-		kid
-		traveler
-		nurse
-
-		baby_dragon
-		dragon
-		looter
+		npc:
+			trickster
+			kid
+			traveler
+			nurse
+		
+		enemies:
+			baby_dragon
+			dragon
+			looter
 	}
 
 	X. Dungeon
 	{
-		demonic_shop_keeper
-		tortured_soul
-		damned_damsel
-		lonely_trader
-
-		golem
-		diamond_ork
-
+		npc:
+			demonic_shop_keeper
+			tortured_soul
+			damned_damsel
+			lonely_trader
+		
+		enemies:
+			golem
+			diamond_ork
 	}
 
 	

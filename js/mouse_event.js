@@ -6,8 +6,6 @@ var mouse =
    width : 1,
    height : 1,
 
-
-
    iso_pt : function(e, pos)
    {
       
@@ -30,24 +28,37 @@ var mouse =
                x: x - box.left * (canvas.width  / box.width),
                y: y - box.top  * (canvas.height / box.height)
              };
+   },
+
+   reset : function()
+   {
+         this.pos = vector2d(-100,-100);
+   },
+};
+
+function click_player(e, person)
+{
+   mouse.iso_pt(e, person.pos);
+   var tst = test.dummy();
+
+   tst.pos = isometric.get_2d_tile_coordinate(person.pos.x, person.pos.y);
+   if (action.box_collision(tst, mouse.iso) == true)
+   {
+      person.color == "red" ? person.color = "cyan" : person.color = "red";
    }
+   console.log("dummy", tst.pos, "mouse", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
 
-
-
+   return(person);
 };
 
 canvas.onmousedown = function (e) {
 
-   mouse.iso_pt(e, player.pos);
-   var tst = test.dummy();
+   person = click_player(e, player);
+};
 
-   tst.pos = isometric.get_2d_tile_coordinate(player.pos.x, player.pos.y);
-   if (action.box_collision(tst, mouse.iso) == true)
-   {
-      player.color == "red" ? player.color = "cyan" : player.color = "red";
-   }
+canvas.onmouseup = function (e) {
 
-   console.log("dummy", tst.pos, "mouse", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
+   mouse.reset();
 };
 
 window.onkeyup = function (e)

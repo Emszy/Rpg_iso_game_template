@@ -33,9 +33,7 @@ var test =
 		weapon1.width = width;
 
 		return (weapon1);
-
 	},
-
 
 	item : function(name)
 	{
@@ -45,7 +43,6 @@ var test =
 		{
 			console.log(this.name);
 		};
-
 		return(item1);
 	},
 
@@ -76,8 +73,7 @@ var test =
 		dummy1.weapon = this.weapon("sword", 20, 5, 25);
 		dummy1.shield = this.weapon("shield", 20, 20, 20);
 		dummy1.inventory = inventory.init();
+		dummy1.skills = skills.init();
 		return(dummy1);
 	},
-
-
 };

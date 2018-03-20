@@ -58,6 +58,7 @@ var game_master5000 =
 
 	update_test : function()
 	{
+
 		tile_map.draw_iso(player);
 
 		tile_map.change_width(16);
@@ -80,27 +81,29 @@ var game_master5000 =
 	initialize_game : function()
 	{
 		this.initialize_game_loop(60, "canvas");
-		
+
 
 		//put all initialize data here ex: players, objects, enemies, map, etc
 		tile_map.test();
 
 		// inventory.test();
-		// skills.test();
-		// items.test();
+		items.test();
 		
 	},
 	game_update : function()
 	{
 		//runs in loop, this is where you put all the game
 		// ex: enemy.move, player.move, render_map etc
+		// player.skills = skills.test(player.skills);
 
-		screen.iso_translate();
-		this.update_test();
+		// screen.iso_translate();
+		// this.update_test();
 
-		screen.reset_translate();
+		gui.test();
+		
+		// screen.reset_translate();
 
-		player = action.test(player);
+		// player = action.test(player);
 		// action.box_collision(dummy ,mouse);
 
 	},
@@ -114,12 +117,8 @@ var game_master5000 =
 		if (this.delta > this.interval)
     	{
     		this.then = this.now - (this.delta % this.interval);
-    		
-
     		screen.ctx.clearRect(0, 0, screen.width, screen.height);
-
 			this.game_update()
-	
     	}
 
 	},
@@ -136,6 +135,9 @@ function loop()
 var player = test.dummy();
 
 player.set_path();
+
 game_master5000.initialize_game();
+
+
 loop();
 

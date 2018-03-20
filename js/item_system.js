@@ -13,7 +13,7 @@
 // y
 // can_be_placed
 // can be picked up
-// holds_additional_items ---> arrows, 
+// holds_additional_items ---> arrows, chests,
 // 
 
 
@@ -54,7 +54,14 @@ items =
 	test : function()
 	{
 		// this.skill.show_all();
-		this.create_archery_weapon("bow", 32, 32, this.use, 1, 1);
+		this.create_archery_weapon("bow", 32, 16, this.use, 1, 1);
+		this.create_weapon("iron_sword", 16, 32, this.use, 1, 22);
+		this.create_weapon("iron_two_hand_sword",16, 48, this.use, 1, 22);
+
+		this.create_armor("iron_plate", 32, 16, this.use, 12, 23)
+		this.create_building_block("wooden_wall", 16, 8, this.use, 1, 11)
+		this.create_farming_item("hoe", 16, 8, this.use, 1, 3)
+		this.create_fishing_item("fishing_pole", 16, 8, this.use, 1, 1);
 
 		this.all["bow"].use();
 		this.all["bow"].can_hold_items();
@@ -84,7 +91,7 @@ items =
 		this.all[name].can_be_shot();
 	},
 
-	create_weapon : function(name, width, height, craft_lvl, bonus)
+	create_weapon : function(name, width, height, craft_lvl, use_func, bonus)
 	{
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, "attack", 1, 5);
 		this.all[name].can_be_wielded();
@@ -107,8 +114,8 @@ items =
 	create_farming_item : function(name, width, height, use_func, craft_lvl, bonus)
 	{
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, "farming", 1, 5);
-		this.can_be_planted();
-		this.can_be_placed();
+		this.all[name].can_be_planted();
+		this.all[name].can_be_placed();
 	},
 
 	create_fishing_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
@@ -117,17 +124,17 @@ items =
 
 	},
 
-	create_woodcutting_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	create_woodcutting_item : function(name, width, height, use_func, craft_lvl, bonus)
 	{
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, "woodcutting", 1, 5);
 	},
 
-	create_mining_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	create_mining_item : function(name, width, height, use_func, craft_lvl, bonus)
 	{
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, "mining", 1, 5);
 	},
 
-	create_food_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	create_food_item : function(name, width, height, use_func, craft_lvl, bonus)
 	{
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, use_func, 1, "farming", 1, 5);
 		this.all[name].can_be_eaten();
@@ -135,7 +142,7 @@ items =
 
 	},
 
-	create_magic_item : function(name, width, height, use_func, craft_lvl, skill_associated, bonus)
+	create_magic_item : function(name, width, height, use_func, craft_lvl, bonus)
 	{
 
 		this.all[name] = this.init(name, 0, 0, 50, 50, 0, function(){console.log("hi")}, 1, "magic", 1, 5);
@@ -161,6 +168,7 @@ items =
 	{
 		item = new Object();
 		item.pos = vector2d(x, y);
+		item.color = random_color();
 		item.timer = 60;
 		item.width = width;
 		item.height = height;
@@ -222,6 +230,7 @@ items =
 		{
 			copy = new Object();
 			copy.pos = vector2d(this.pos.x, this.pos.y);
+			copy.color = this.color;
 			copy.timer = this.timer;
 			copy.width = this.width;
 			copy.height = this.height;

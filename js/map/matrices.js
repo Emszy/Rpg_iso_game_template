@@ -126,9 +126,9 @@ var matrices =
     return angle * (Math.PI / 180);
   },
 
-   toDegrees : function(angle)
-  {
+   degrees : function(angle)
+   {
     return angle * (180 / Math.PI);
-  },
+   },
 
 }

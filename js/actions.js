@@ -39,6 +39,8 @@ action =
    		var run = 16;
    		var jump = 32;
 
+
+
    		if (person.keys[left] == true)
    		{
       		person = action.move_left(person, person.velocity);
@@ -59,15 +61,14 @@ action =
    		   person = action.move_down(person, person.velocity);
    		   tile_map = action.move_up(tile_map, person.velocity);
    		}
-
-   		if (person.keys[run] == true)
-   		{
-   		   person.velocity = 0.1
+   		if (person.keys[run] == true && person.skills.agility.current > 0)
+   		{		
+   		  	person.velocity = 0.1;
 		}
-		else if (person.keys[run] == false)
-   		{
+		else if (person.keys[run] == false || person.skills.agility.current <= 0)
+		{
 			person.velocity = 0.05;
-		}
+		};
 
 		if (person.keys[jump] == true)
    		{
@@ -76,7 +77,7 @@ action =
 		else if (person.keys[jump] == false && person.pos.z > 0)
 		{
 			person.decend = true;
-		}
+		};
 		return (person);
 	},
 
@@ -122,12 +123,6 @@ action =
 		person.looking_direction.x = 1;
 		person.looking_direction.y = -1;
 // 
-		return (person);
-	},
-
-	run : function(person)
-	{
-		person.velocity == 0.05 ? person.velocity = 0.1 : person.velocity = 0.05;
 		return (person);
 	},
 
