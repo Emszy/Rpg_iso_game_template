@@ -30,6 +30,23 @@ function random_color()
     return (color);
 }
 
+function random_item()
+{
+   var r_item = [    
+                    "bow",
+                    "iron_sword",
+                    "iron_two_hand_sword",
+                    "iron_plate",
+                    "wooden_wall",
+                    "hoe",
+                    "fishing_pole"
+                ];
+
+    return(items.all[r_item[random_int(0,6)]].copy());
+
+
+}
+
 function drawRotatedRect(x,y,width,height,degrees, color){
 
         // first save the untranslated/unrotated context

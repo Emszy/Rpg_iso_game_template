@@ -37,11 +37,24 @@ var inventory =
 		inven = new Object();
 		inven.count = 0;
 		inven.stock = new Array(this.max_items).fill("none");
+		inven.selected = "none";
+		inven.selected_index = null;
 
 		inven.show = function()
 		{
-			console.log(this.stock, this.count);
+			console.log(this.selected, this.stock, this.count);
+		};
 
+		inven.select = function(index)
+		{
+			this.selected = this.stock[index];
+			this.selected_index = index;
+		};
+
+		inven.deselect = function()
+		{
+			this.selected = "none";
+			this.selected_index = null;
 		};
 
 		inven.add_item = function(item)

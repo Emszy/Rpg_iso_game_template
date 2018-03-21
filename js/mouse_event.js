@@ -1,6 +1,7 @@
 var mouse =
 {
    pos : vector2d(0,0),
+   up_pos : vector2d(0,0),
    tile : make_tile(),
    iso : make_tile(),
    width : 1,
@@ -46,7 +47,7 @@ function click_player(e, person)
    {
       person.color == "red" ? person.color = "cyan" : person.color = "red";
    }
-   console.log("dummy", tst.pos, "mouse", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
+   console.log("mouse: ", mouse.pos ,"dummy", tst.pos, "mouse iso: ", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
 
    return(person);
 };
@@ -54,11 +55,16 @@ function click_player(e, person)
 canvas.onmousedown = function (e) {
 
    person = click_player(e, player);
+   ui.mouse_selection();
+   ui2.mouse_selection();
+   ui3.mouse_selection();
 };
 
 canvas.onmouseup = function (e) {
 
-   mouse.reset();
+   mouse.up_pos.x = e.clientX;
+   mouse.up_pos.y = e.clientY;
+   console.log(mouse.up_pos);
 };
 
 window.onkeyup = function (e)
