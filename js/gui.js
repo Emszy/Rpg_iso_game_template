@@ -132,13 +132,16 @@ var gui =
 
 			this.collision_index = this.item_mouse_collision();
 
-			if (this.collision_index != "none" && this.tabs[this.index].items.stock[this.collision_index] != "none")
+			if (this.collision_index != "none")
 			{
 				if (this.tabs[this.index].items.selected_index != null)
 				{
 					this.rearrange_items(this.tabs[this.index].items.stock, this.collision_index);
 				}
-				this.tabs[this.index].items.select(this.collision_index);
+				if (this.tabs[this.index].items.stock[this.collision_index] != "none")
+				{
+					this.tabs[this.index].items.select(this.collision_index);
+				}
 			}
 			else
 			{
@@ -148,7 +151,7 @@ var gui =
 
 		ui.rearrange_items = function(an_inventory, new_item)
 		{
-			if (this.tabs[this.index].items.selected_index != null && this.tabs[this.index].items.stock[new_item] != "none")
+			if (this.tabs[this.index].items.selected_index != null)
 			{
 				this.tabs[this.index].items.swap(this.tabs[this.index].items.selected_index, new_item);
 			}

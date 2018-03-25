@@ -148,7 +148,7 @@ game_master5000.initialize_game();
 						}
 					}
 
-
+//we are going to need a master  game object
 		var ui = gui.init(vector2d(0,0), 250, 400);
 
 		ui.make_tab("Armor", gui_test_inventories[0]);

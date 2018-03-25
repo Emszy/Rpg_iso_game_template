@@ -1,6 +1,6 @@
 var inventory = 
 {
-	max_items : 32,
+	max_items : 20,
 
 	test : function()
 	{
