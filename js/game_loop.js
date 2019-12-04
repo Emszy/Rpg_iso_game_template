@@ -96,14 +96,14 @@ var game_master5000 =
 		// ex: enemy.move, player.move, render_map etc
 		// player.skills = skills.test(player.skills);
 
-		// screen.iso_translate();
-		// this.update_test();
+		screen.iso_translate();
+		this.update_test();
 
-		gui.test();
+		// gui.test();
 		
-		// screen.reset_translate();
+		screen.reset_translate();
 
-		// player = action.test(player);
+		player = action.test(player);
 		// action.box_collision(dummy ,mouse);
 
 	},
@@ -138,42 +138,42 @@ player.set_path();
 
 game_master5000.initialize_game();
 					
-					var gui_test_inventories = [];
-					for (var i = 0; i < 16;i++)
-					{
-						gui_test_inventories[i] = inventory.init();
-						for (var x = 0; x < random_int(4,18); x++)
-						{
-							gui_test_inventories[i].add_item(random_item());
-						}
-					}
+					// var gui_test_inventories = [];
+					// for (var i = 0; i < 16;i++)
+					// {
+					// 	gui_test_inventories[i] = inventory.init();
+					// 	for (var x = 0; x < random_int(4,18); x++)
+					// 	{
+					// 		gui_test_inventories[i].add_item(random_item());
+					// 	}
+					// }
 
 //we are going to need a master  game object
-		var ui = gui.init(vector2d(0,0), 250, 400);
+		// var ui = gui.init(vector2d(0,0), 250, 400);
 
-		ui.make_tab("Armor", gui_test_inventories[0]);
-		ui.make_tab("Armor", gui_test_inventories[1]);
-		ui.make_tab("Armor", gui_test_inventories[2]);
-		ui.make_tab("Armor", gui_test_inventories[3]);
+		// ui.make_tab("Armor", gui_test_inventories[0]);
+		// ui.make_tab("Armor", gui_test_inventories[1]);
+		// ui.make_tab("Armor", gui_test_inventories[2]);
+		// ui.make_tab("Armor", gui_test_inventories[3]);
 
 
 		
-		var ui2 = gui.init(vector2d(250,250), 500, 500);
+		// var ui2 = gui.init(vector2d(250,250), 500, 500);
 
-		ui2.make_tab("Armor", gui_test_inventories[4]);
-		ui2.make_tab("Armor", gui_test_inventories[5]);
-		ui2.make_tab("Armor", gui_test_inventories[6]);
-		ui2.make_tab("Armor", gui_test_inventories[7]);
-		ui2.make_tab("Armor", gui_test_inventories[8]);
+		// ui2.make_tab("Armor", gui_test_inventories[4]);
+		// ui2.make_tab("Armor", gui_test_inventories[5]);
+		// ui2.make_tab("Armor", gui_test_inventories[6]);
+		// ui2.make_tab("Armor", gui_test_inventories[7]);
+		// ui2.make_tab("Armor", gui_test_inventories[8]);
 	
 
 		
-		var ui3 = gui.init(vector2d(500,0), 30, 30);
+		// var ui3 = gui.init(vector2d(500,0), 30, 30);
 
-		ui3.make_tab("Armor", gui_test_inventories[9]);
-		ui3.make_tab("Armor", gui_test_inventories[10]);
-		ui3.make_tab("Armor", gui_test_inventories[11]);
-		ui3.make_tab("Armor", gui_test_inventories[12]);
+		// ui3.make_tab("Armor", gui_test_inventories[9]);
+		// ui3.make_tab("Armor", gui_test_inventories[10]);
+		// ui3.make_tab("Armor", gui_test_inventories[11]);
+		// ui3.make_tab("Armor", gui_test_inventories[12]);
 
 
 loop();
