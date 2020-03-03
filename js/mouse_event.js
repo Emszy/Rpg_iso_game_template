@@ -39,32 +39,19 @@ var mouse =
 
 function click_player(e, person)
 {
-   mouse.iso_pt(e, person.pos);
-   var tst = test.dummy();
-
-   tst.pos = isometric.get_2d_tile_coordinate(person.pos.x, person.pos.y);
-   if (action.box_collision(tst, mouse.iso) == true)
-   {
-      person.color == "red" ? person.color = "cyan" : person.color = "red";
-   }
-   console.log("mouse: ", mouse.pos ,"dummy", tst.pos, "mouse iso: ", mouse.iso.pos, "\nmouse tile", mouse.tile.pos);
-
    return(person);
 };
 
 canvas.onmousedown = function (e) {
 
    person = click_player(e, player);
-   ui.mouse_selection();
-   ui2.mouse_selection();
-   ui3.mouse_selection();
+
 };
 
 canvas.onmouseup = function (e) {
 
    mouse.up_pos.x = e.clientX;
    mouse.up_pos.y = e.clientY;
-   console.log(mouse.up_pos);
 };
 
 window.onkeyup = function (e)
@@ -74,7 +61,6 @@ window.onkeyup = function (e)
 
 window.onkeydown = function (e)
 {
-   console.log(e.keyCode);
    player.keys[e.keyCode] = true;
 
 };

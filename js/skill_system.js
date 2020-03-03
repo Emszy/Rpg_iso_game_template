@@ -46,89 +46,89 @@ skills =
 
 	skill : function(name)
 	{
-		var skil = new Object();
-		skil.name = name;
-		skil.xp = 0;
-		skil.lvl = 1;
-		skil.current = 4;
-		skil.timer = 50;
-		skil.max_timer = 50;
+		return ({
 
-		skil.add_xp = function(xp)
-		{
-			this.xp += xp;
-		};
+			name: name,
+			xp: 0,
+			lvl: 1,
+			current: 4,
+			timer: 50,
+			max_timer: 50,
 
-		skil.add_lvl = function()
-		{
-			while (this.xp > Math.round(this.lvl * this.lvl * this.lvl * 11.5))
+			add_xp: function(xp)
 			{
-				this.lvl+=1;
+				this.xp += xp;
+			},
+
+			add_lvl : function()
+			{
+				while (this.xp > Math.round(this.lvl * this.lvl * this.lvl * 11.5))
+				{
+					this.lvl+=1;
+					this.current = this.lvl;
+				}
+			},
+
+			add_current : function(boost)
+			{
+				if (this.current + boost < this.lvl + 12)
+				{
+					this.current+=boost;
+				}
+				else
+				{
+					this.current = this.lvl + 12;
+				}
+			},
+
+			subtract_current : function(boost)
+			{
+				if (this.current - boost >= 0)
+				{
+					this.current-=boost;
+				}
+				else
+				{
+					this.current = 0;
+				}
+			},
+
+			current_reset : function()
+			{
 				this.current = this.lvl;
-			}
-		};
+			},
 
-		skil.add_current = function(boost)
-		{
-			if (this.current + boost < this.lvl + 12)
+			count_down : function()
 			{
-				this.current+=boost;
-			}
-			else
+				this.timer -= 1;
+			},
+
+			timer_reset : function()
 			{
-				this.current = this.lvl + 12;
-			}
-		};
+				this.timer = this.max_timer;
+			},
 
-		skil.subtract_current = function(boost)
-		{
-			if (this.current - boost >= 0)
+			timer_done : function()
 			{
-				this.current-=boost;
-			}
-			else
+				if (this.timer <= 0) return (true);
+				else return (false);
+			},
+
+			display : function()
 			{
-				this.current = 0;
+				console.log("\n" + this.name + ":\n",
+							"xp" + this.xp + "\n",
+							"lvl" + this.lvl + "\n",
+							"current" + this.current + "\n",
+							"timer" + this.timer + "\n");
+			},
+
+			access : function(lvl)
+			{
+				if (this.lvl >= lvl) return(true);
+				return (false);
 			}
-		};
-
-		skil.current_reset = function()
-		{
-			this.current = this.lvl;
-		};
-
-		skil.count_down = function()
-		{
-			this.timer -= 1;
-		};
-
-		skil.timer_reset = function()
-		{
-			this.timer = this.max_timer;
-		};
-
-		skil.timer_done = function()
-		{
-			if (this.timer <= 0) return (true);
-			else return (false);
-		};
-
-		skil.display = function()
-		{
-			console.log("\n" + this.name + ":\n",
-						"xp" + this.xp + "\n",
-						"lvl" + this.lvl + "\n",
-						"current" + this.current + "\n",
-						"timer" + this.timer + "\n");
-		};
-
-		skil.access = function(lvl)
-		{
-			if (this.lvl >= lvl) return(true);
-			return (false);
-		};
-
-		return(skil);
+		})
 	},
 
 	init : function()

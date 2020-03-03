@@ -56,9 +56,16 @@ var game_master5000 =
 		screen.set_canvas(canvas_id);
 	},
 
-	update_test : function()
+	initialize_game : function()
 	{
+		this.initialize_game_loop(60, "canvas");
 
+		tile_map.test();
+		
+	},
+	game_update : function()
+	{
+		screen.iso_translate();
 		tile_map.draw_iso(player);
 
 		tile_map.change_width(16);
@@ -75,36 +82,9 @@ var game_master5000 =
 		draw_tile(draw_pos, draw_pos, player.color);
 		tile_map.change_width(32 * 3);
 		tile_map.change_height(16 * 3);
-
-	},
-
-	initialize_game : function()
-	{
-		this.initialize_game_loop(60, "canvas");
-
-
-		//put all initialize data here ex: players, objects, enemies, map, etc
-		tile_map.test();
-
-		// inventory.test();
-		items.test();
-		
-	},
-	game_update : function()
-	{
-		//runs in loop, this is where you put all the game
-		// ex: enemy.move, player.move, render_map etc
-		// player.skills = skills.test(player.skills);
-
-		screen.iso_translate();
-		this.update_test();
-
-		// gui.test();
-		
 		screen.reset_translate();
-
-		player = action.test(player);
-		// action.box_collision(dummy ,mouse);
+		player = action.check_keys(player);
+		player = action.gravity(player);
 
 	},
 
@@ -120,61 +100,31 @@ var game_master5000 =
     		screen.ctx.clearRect(0, 0, screen.width, screen.height);
 			this.game_update()
     	}
-
 	},
 }
 
-// loop is called outside for requestAnimationFrame() to work
-// logic is inside game_master5000 so manipulate game_update() or initialize_game();
 function loop()
 {
 	requestAnimationFrame(loop); 
     game_master5000.loop();
 }
 
-var player = test.dummy();
+var player = {
+		pos : vector3d(0,0,0),
+		iso_pos : vector3d(0,0,0),
+		width : 16,
+		height : 16,
+		max_jump : 5,
+		descend : false,
+		keys : new Array(200).fill(false),
+		velocity :0.05,
+		run :1,
+		looking_direction :vector2d(0,0),
+		color: "cyan",
+		skills : skills.init(),
 
-player.set_path();
+}
 
 game_master5000.initialize_game();
-					
-					// var gui_test_inventories = [];
-					// for (var i = 0; i < 16;i++)
-					// {
-					// 	gui_test_inventories[i] = inventory.init();
-					// 	for (var x = 0; x < random_int(4,18); x++)
-					// 	{
-					// 		gui_test_inventories[i].add_item(random_item());
-					// 	}
-					// }
-
-//we are going to need a master  game object
-		// var ui = gui.init(vector2d(0,0), 250, 400);
-
-		// ui.make_tab("Armor", gui_test_inventories[0]);
-		// ui.make_tab("Armor", gui_test_inventories[1]);
-		// ui.make_tab("Armor", gui_test_inventories[2]);
-		// ui.make_tab("Armor", gui_test_inventories[3]);
-
-
-		
-		// var ui2 = gui.init(vector2d(250,250), 500, 500);
-
-		// ui2.make_tab("Armor", gui_test_inventories[4]);
-		// ui2.make_tab("Armor", gui_test_inventories[5]);
-		// ui2.make_tab("Armor", gui_test_inventories[6]);
-		// ui2.make_tab("Armor", gui_test_inventories[7]);
-		// ui2.make_tab("Armor", gui_test_inventories[8]);
-	
-
-		
-		// var ui3 = gui.init(vector2d(500,0), 30, 30);
-
-		// ui3.make_tab("Armor", gui_test_inventories[9]);
-		// ui3.make_tab("Armor", gui_test_inventories[10]);
-		// ui3.make_tab("Armor", gui_test_inventories[11]);
-		// ui3.make_tab("Armor", gui_test_inventories[12]);
-
-
 loop();
 
